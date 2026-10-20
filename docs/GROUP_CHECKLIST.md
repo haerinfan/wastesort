@@ -2,6 +2,7 @@
 
 - Review the revised protocol with the instructor, especially descriptive comparisons replacing unspecified hypothesis tests and PyTorch replacing TensorFlow/Keras.
 - Rerun the Colab notebook and compare the saved manifest, exclusions and validation/test records.
+- Download and open [the candidate-pair gallery](../reports/candidate_review.html) for side-by-side inspection; record decisions in [the worksheet](../reports/manual_review_worksheet.csv). The gallery works offline and does not save decisions.
 - Inspect the local visual inventory generated at `reports/audit_images/inventory.html`, all 45 candidate pairs in `reports/near_duplicate_candidates.csv`, excluded conflicting examples and sampled errors. Record findings without tuning to the published test set.
 - If image audit changes the dataset, create a separately versioned study and explain why its results differ. The existing test set is already exposed.
 - Verify the bibliography against the original papers and required citation style.

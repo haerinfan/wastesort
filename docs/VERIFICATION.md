@@ -23,6 +23,8 @@ An initial neural run stopped because CUDA's deterministic backward operation di
 
 ## What these checks do not establish
 
+The additional offline candidate-pair gallery was opened in Edge: all 90 embedded images loaded, all 45 cards were present, and the first card's layout was visually checked. Generation asserts that both images in every candidate pair share a partition. This verifies the review aid, not human label decisions.
+
 Neither notebook has been executed inside Google Colab in this session. A full clean-environment training reproduction by a group member is pending. GPU and platform changes can affect exact numerical reproduction.
 
 No complete human image/label audit, independent campus-photo validation, campus disposal-rule verification or instructor acceptance has been completed. Revised proposal status fields retain planning/source context; executed technical results are recorded separately. Monday and Tuesday materials are prepared, but presentation delivery and individual mastery remain to be demonstrated.

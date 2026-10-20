@@ -20,6 +20,7 @@ These materials focus on the assigned concepts. The broader implementation and e
 - [Runnable preparation notebook](notebooks/WasteSort_Day2_Tuesday.ipynb)
 - [Executed notebook with saved outputs](notebooks/WasteSort_Day2_Tuesday_Executed.ipynb)
 - [Complete source-image inventory](reports/dataset_inventory.csv), [label encoding](reports/label_encoding.json), [preprocessing plan](reports/preprocessing.json) and [human review worksheet](reports/manual_review_worksheet.csv)
+- [Offline gallery of all 45 candidate pairs](reports/candidate_review.html): download and open the HTML file in a browser, then record decisions in the worksheet. Regenerate after downloading the dataset with `python -m wastesort.review_gallery`.
 
 The Tuesday notebook uses a CPU runtime and stops at prepared inputs. In Colab select **Runtime → Run all**. Its executed copy was verified locally on Windows; Google Colab execution remains unverified. The worksheet intentionally leaves human decisions blank.
 
