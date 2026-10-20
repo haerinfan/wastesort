@@ -1,0 +1,17 @@
+{
+  "dataset": "TrashNet, resized archive only",
+  "creators": "Gary Thung and Mindy Yang",
+  "source_repository": "https://github.com/garythung/trashnet",
+  "archive_url": "https://huggingface.co/datasets/garythung/trashnet/resolve/94cd17e/dataset-resized.zip",
+  "archive_sha256": "c060e8abfe5d6de0578ca15be1ed8ad0794a865d333c3473d53d1d9ad6e38b8c",
+  "retrieved_utc": "2026-10-20T08:51:28.931138+00:00",
+  "license": "MIT as identified by the creators' dataset card",
+  "expected_counts": {
+    "cardboard": 403,
+    "glass": 501,
+    "metal": 410,
+    "paper": 594,
+    "plastic": 482,
+    "trash": 137
+  }
+}

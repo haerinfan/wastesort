@@ -1,0 +1,24 @@
+{
+  "source_images": 2527,
+  "usable_images": 2521,
+  "source_class_counts": {
+    "cardboard": 403,
+    "glass": 501,
+    "metal": 410,
+    "paper": 594,
+    "plastic": 482,
+    "trash": 137
+  },
+  "excluded_images": 6,
+  "near_duplicate_candidate_pairs": 45,
+  "near_duplicate_threshold": "64-bit perceptual hash Hamming distance <= 6; transitive groups",
+  "group_count": 2476,
+  "manual_review": "Candidate grouping is conservative screening, not proof all duplicate objects were found.",
+  "split_counts": {
+    "train": 1774,
+    "test": 376,
+    "validation": 371
+  },
+  "split_method": "StratifiedGroupKFold(20, shuffle=True, random_state=42); folds 0-13/14-16/17-19",
+  "manifest_sha256": "251874bb101118f346a20489163b4b455d79d690a4b404b6aafd51471d5d3f16"
+}

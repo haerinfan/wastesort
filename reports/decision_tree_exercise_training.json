@@ -1,0 +1,121 @@
+{
+  "model_id": "decision_tree_exercise",
+  "kind": "classical",
+  "artifact": "models/decision_tree_exercise.joblib",
+  "artifact_sha256": "8c85bf9233ed67186121b82817e2876c6a7b2996d11f42702930d33d2053c6e7",
+  "validation_macro_f1": 0.3504219567776024,
+  "training_seconds": 3.548320699999749,
+  "shared_hog_extraction_seconds": 6.003314899993711,
+  "trials": [
+    {
+      "parameters": "DecisionTreeClassifier(class_weight='balanced', max_depth=12, random_state=42)",
+      "training_seconds": 3.548320699999749,
+      "validation": {
+        "accuracy": 0.3692722371967655,
+        "macro_f1": 0.3504219567776024,
+        "report": {
+          "cardboard": {
+            "precision": 0.3220338983050847,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3275862068965517,
+            "support": 57.0
+          },
+          "glass": {
+            "precision": 0.4126984126984127,
+            "recall": 0.3561643835616438,
+            "f1-score": 0.38235294117647056,
+            "support": 73.0
+          },
+          "metal": {
+            "precision": 0.25396825396825395,
+            "recall": 0.24615384615384617,
+            "f1-score": 0.25,
+            "support": 65.0
+          },
+          "paper": {
+            "precision": 0.5512820512820513,
+            "recall": 0.4777777777777778,
+            "f1-score": 0.5119047619047619,
+            "support": 90.0
+          },
+          "plastic": {
+            "precision": 0.3561643835616438,
+            "recall": 0.3880597014925373,
+            "f1-score": 0.37142857142857144,
+            "support": 67.0
+          },
+          "trash": {
+            "precision": 0.2,
+            "recall": 0.3684210526315789,
+            "f1-score": 0.25925925925925924,
+            "support": 19.0
+          },
+          "accuracy": 0.3692722371967655,
+          "macro avg": {
+            "precision": 0.3493578333025744,
+            "recall": 0.3616516824917862,
+            "f1-score": 0.3504219567776024,
+            "support": 371.0
+          },
+          "weighted avg": {
+            "precision": 0.3834750704914427,
+            "recall": 0.3692722371967655,
+            "f1-score": 0.373900936070228,
+            "support": 371.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            19,
+            9,
+            6,
+            9,
+            7,
+            7
+          ],
+          [
+            7,
+            26,
+            17,
+            3,
+            14,
+            6
+          ],
+          [
+            12,
+            9,
+            16,
+            8,
+            14,
+            6
+          ],
+          [
+            13,
+            8,
+            9,
+            43,
+            11,
+            6
+          ],
+          [
+            8,
+            8,
+            11,
+            11,
+            26,
+            3
+          ],
+          [
+            0,
+            3,
+            4,
+            4,
+            1,
+            7
+          ]
+        ]
+      }
+    }
+  ],
+  "research_candidate": false
+}

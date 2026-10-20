@@ -1,0 +1,230 @@
+{
+  "model_id": "random_forest",
+  "kind": "classical",
+  "artifact": "models/random_forest.joblib",
+  "artifact_sha256": "e0cb14b50eb93a1cab0d9e0b9739086f9c542d71bde9c2d959223d0974440ab7",
+  "validation_macro_f1": 0.5594109508655327,
+  "training_seconds": 8.861033899993345,
+  "shared_hog_extraction_seconds": 6.003314899993711,
+  "trials": [
+    {
+      "parameters": "RandomForestClassifier(class_weight='balanced', n_estimators=300, n_jobs=4,\n                       random_state=42)",
+      "training_seconds": 4.478909799996472,
+      "validation": {
+        "accuracy": 0.5956873315363881,
+        "macro_f1": 0.5577509148853353,
+        "report": {
+          "cardboard": {
+            "precision": 0.6545454545454545,
+            "recall": 0.631578947368421,
+            "f1-score": 0.6428571428571429,
+            "support": 57.0
+          },
+          "glass": {
+            "precision": 0.5526315789473685,
+            "recall": 0.5753424657534246,
+            "f1-score": 0.5637583892617449,
+            "support": 73.0
+          },
+          "metal": {
+            "precision": 0.6666666666666666,
+            "recall": 0.4,
+            "f1-score": 0.5,
+            "support": 65.0
+          },
+          "paper": {
+            "precision": 0.6209677419354839,
+            "recall": 0.8555555555555555,
+            "f1-score": 0.719626168224299,
+            "support": 90.0
+          },
+          "plastic": {
+            "precision": 0.4861111111111111,
+            "recall": 0.5223880597014925,
+            "f1-score": 0.5035971223021583,
+            "support": 67.0
+          },
+          "trash": {
+            "precision": 1.0,
+            "recall": 0.2631578947368421,
+            "f1-score": 0.4166666666666667,
+            "support": 19.0
+          },
+          "accuracy": 0.5956873315363881,
+          "macro avg": {
+            "precision": 0.6634870922010141,
+            "recall": 0.5413371538526226,
+            "f1-score": 0.5577509148853353,
+            "support": 371.0
+          },
+          "weighted avg": {
+            "precision": 0.6157441259412941,
+            "recall": 0.5956873315363881,
+            "f1-score": 0.5841543087872311,
+            "support": 371.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            36,
+            4,
+            2,
+            12,
+            3,
+            0
+          ],
+          [
+            4,
+            42,
+            9,
+            7,
+            11,
+            0
+          ],
+          [
+            0,
+            12,
+            26,
+            10,
+            17,
+            0
+          ],
+          [
+            7,
+            3,
+            1,
+            77,
+            2,
+            0
+          ],
+          [
+            5,
+            12,
+            1,
+            14,
+            35,
+            0
+          ],
+          [
+            3,
+            3,
+            0,
+            4,
+            4,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "parameters": "RandomForestClassifier(class_weight='balanced', max_depth=20, n_estimators=300,\n                       n_jobs=4, random_state=42)",
+      "training_seconds": 4.382124099996872,
+      "validation": {
+        "accuracy": 0.5983827493261455,
+        "macro_f1": 0.5594109508655327,
+        "report": {
+          "cardboard": {
+            "precision": 0.6428571428571429,
+            "recall": 0.631578947368421,
+            "f1-score": 0.6371681415929203,
+            "support": 57.0
+          },
+          "glass": {
+            "precision": 0.5733333333333334,
+            "recall": 0.589041095890411,
+            "f1-score": 0.581081081081081,
+            "support": 73.0
+          },
+          "metal": {
+            "precision": 0.65,
+            "recall": 0.4,
+            "f1-score": 0.49523809523809526,
+            "support": 65.0
+          },
+          "paper": {
+            "precision": 0.6363636363636364,
+            "recall": 0.8555555555555555,
+            "f1-score": 0.7298578199052133,
+            "support": 90.0
+          },
+          "plastic": {
+            "precision": 0.47297297297297297,
+            "recall": 0.5223880597014925,
+            "f1-score": 0.49645390070921985,
+            "support": 67.0
+          },
+          "trash": {
+            "precision": 1.0,
+            "recall": 0.2631578947368421,
+            "f1-score": 0.4166666666666667,
+            "support": 19.0
+          },
+          "accuracy": 0.5983827493261455,
+          "macro avg": {
+            "precision": 0.6625878475878476,
+            "recall": 0.5436202588754536,
+            "f1-score": 0.5594109508655327,
+            "support": 371.0
+          },
+          "weighted avg": {
+            "precision": 0.6164639001027142,
+            "recall": 0.5983827493261455,
+            "f1-score": 0.5870465255683158,
+            "support": 371.0
+          }
+        },
+        "confusion_matrix": [
+          [
+            36,
+            4,
+            2,
+            12,
+            3,
+            0
+          ],
+          [
+            5,
+            43,
+            9,
+            6,
+            10,
+            0
+          ],
+          [
+            0,
+            11,
+            26,
+            8,
+            20,
+            0
+          ],
+          [
+            7,
+            2,
+            2,
+            77,
+            2,
+            0
+          ],
+          [
+            5,
+            12,
+            1,
+            14,
+            35,
+            0
+          ],
+          [
+            3,
+            3,
+            0,
+            4,
+            4,
+            5
+          ]
+        ]
+      }
+    }
+  ],
+  "research_candidate": true
+}

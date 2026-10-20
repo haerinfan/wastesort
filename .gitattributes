@@ -1,0 +1,7 @@
+# Preserve recorded bytes across platforms; protocol/manifest hashes depend on them.
+* -text
+*.pdf binary
+*.docx binary
+*.pptx binary
+*.pt binary
+*.png binary

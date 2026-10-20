@@ -1,0 +1,41 @@
+{
+  "resamples": 2000,
+  "unit": "perceptual-hash candidate group",
+  "macro_f1_95_percent_intervals": {
+    "svm": [
+      0.5709879876146716,
+      0.688616744059204
+    ],
+    "random_forest": [
+      0.5376266630235506,
+      0.6567361484576913
+    ],
+    "cnn": [
+      0.5195193299694411,
+      0.6269457184405324
+    ],
+    "mobilenet": [
+      0.7624591924675445,
+      0.8559833149822197
+    ],
+    "cnn_weighted": [
+      0.536824800489453,
+      0.6364158882661545
+    ]
+  },
+  "paired_difference_95_percent_intervals": {
+    "mobilenet_minus_cnn_macro_f1": [
+      0.1725173540489476,
+      0.30214030200739633
+    ],
+    "cnn_weighted_minus_cnn_macro_f1": [
+      -0.03859458773009465,
+      0.06119830005234228
+    ],
+    "cnn_weighted_minus_cnn_trash_recall": [
+      -0.07692307692307687,
+      0.4
+    ]
+  },
+  "interpretation": "Descriptive conditional intervals for one fitted run; no formal significance claims."
+}

@@ -1,0 +1,19 @@
+{
+  "model_id": "mobilenet",
+  "kind": "mobilenet",
+  "artifact": "models/deployed.pt",
+  "artifact_sha256": "1c357178a97d4da967ab60b9c67fc10292ee5319213b112ee7ec0676922734b2",
+  "classes": [
+    "cardboard",
+    "glass",
+    "metal",
+    "paper",
+    "plastic",
+    "trash"
+  ],
+  "validation_macro_f1": 0.8474362310329003,
+  "selection_rule": "highest validation macro F1 among four primary models; test unseen",
+  "frozen_utc": "2026-10-20T09:01:18.316968+00:00",
+  "protocol_sha256": "d3968f1c3727aa792bb2371f1d9a515911795582c34dade4b52fdf5c6d093adc",
+  "manifest_sha256": "251874bb101118f346a20489163b4b455d79d690a4b404b6aafd51471d5d3f16"
+}

@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+data/raw/
+data/downloads/
+data/cache/
+reports/audit_images/
+models/*.joblib
+models/*.pt
+!models/deployed.pt
+!models/deployed.joblib
+*.log
+.DS_Store
+runs/

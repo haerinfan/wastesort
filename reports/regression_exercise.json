@@ -1,0 +1,11 @@
+{
+  "purpose": "Separate numerical regression learning exercise; not part of WasteSort classification.",
+  "dataset": "sklearn.datasets.load_diabetes, bundled numerical benchmark",
+  "train_rows": 353,
+  "test_rows": 89,
+  "random_seed": 42,
+  "mse": 2900.1936284934814,
+  "r2": 0.4526027629719195,
+  "source": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html",
+  "limitation": "Educational predictions only; no clinical use or medical interpretation."
+}

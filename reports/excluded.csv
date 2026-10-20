@@ -1,0 +1,7 @@
+path,reason,retained
+data/raw/glass/glass115.jpg,conflicting_labels_for_identical_pixels,
+data/raw/metal/metal91.jpg,conflicting_labels_for_identical_pixels,
+data/raw/glass/glass176.jpg,conflicting_labels_for_identical_pixels,
+data/raw/plastic/plastic152.jpg,conflicting_labels_for_identical_pixels,
+data/raw/glass/glass389.jpg,conflicting_labels_for_identical_pixels,
+data/raw/plastic/plastic332.jpg,conflicting_labels_for_identical_pixels,
