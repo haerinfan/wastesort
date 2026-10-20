@@ -1,5 +1,6 @@
 """Run: python -m streamlit run app.py"""
 import json
+import hashlib
 
 import pandas as pd
 import streamlit as st
@@ -37,12 +38,18 @@ with scan:
         uploaded = st.file_uploader("JPEG or PNG · up to 10 MB", type=["jpg", "jpeg", "png"])
         st.caption("Photos are processed in memory. This app does not save uploaded files.")
         image = None
+        upload_key = None
         if uploaded is not None:
             try:
-                image = read_upload(uploaded.getvalue())
+                payload = uploaded.getvalue()
+                image = read_upload(payload)
+                upload_key = hashlib.sha256(payload).hexdigest()
                 st.image(image, caption="Your photo", use_container_width=True)
             except ValueError as exc:
                 st.error(str(exc))
+        if st.session_state.get("prediction_upload") != upload_key:
+            st.session_state.pop("prediction_result", None)
+            st.session_state["prediction_upload"] = upload_key
     with right:
         st.subheader("Material prediction")
         if not (ROOT / "models/deployment.json").exists():
@@ -51,11 +58,18 @@ with scan:
             st.info("Upload a photo to see the predicted material.")
             st.write("Supported materials")
             st.markdown(" · ".join(c.title() for c in CLASSES))
-        elif st.button("Identify material", type="primary", use_container_width=True):
-            try:
-                with st.spinner("Looking at your item…"):
-                    predictor = load_model()
-                    result = predictor.predict(image)
+        else:
+            if st.button("Identify material", type="primary", use_container_width=True):
+                try:
+                    with st.spinner("Looking at your item…"):
+                        st.session_state["prediction_result"] = load_model().predict(image)
+                except (OSError, ValueError, RuntimeError) as exc:
+                    st.session_state.pop("prediction_result", None)
+                    st.error("The model could not process this image. Check the installation or try another photo.")
+                    with st.expander("Troubleshooting details"):
+                        st.code(str(exc))
+            result = st.session_state.get("prediction_result")
+            if result:
                 st.markdown(f"## {result['label'].title()}")
                 scores = result["scores"]
                 if scores:
@@ -68,10 +82,6 @@ with scan:
                 st.caption(f"Model: {result['model']} · selected using validation macro F1")
                 st.download_button("Download this result", json.dumps(result, indent=2),
                                    file_name="wastesort-result.json", mime="application/json")
-            except (OSError, ValueError, RuntimeError) as exc:
-                st.error("The model could not process this image. Check the installation or try another photo.")
-                with st.expander("Troubleshooting details"):
-                    st.code(str(exc))
         st.divider()
         st.markdown("**Before choosing a bin**")
         st.write("Campus disposal instructions are awaiting verification. Check the posted campus rules.")
@@ -91,8 +101,19 @@ with research:
         b.metric("Held-out test images", audit["split_counts"]["test"])
         c.metric("Selected model", metadata["model_id"])
         st.write("The deployment model was chosen using validation results before the test set was evaluated.")
-        st.dataframe(report[["model", "role", "validation_macro_f1", "test_accuracy",
-                             "test_macro_f1", "trash_recall"]], hide_index=True, use_container_width=True)
+        display = report[["model", "role", "validation_macro_f1", "test_accuracy",
+                          "test_macro_f1", "trash_recall"]].copy()
+        names = {"svm": "HOG + SVM", "random_forest": "HOG + Random Forest",
+                 "cnn": "Small CNN", "mobilenet": "MobileNetV2", "cnn_weighted": "Small CNN (weighted)"}
+        display["model"] = display.model.map(names)
+        display["role"] = display.role.map({"primary": "Primary comparison", "ablation": "Weighting experiment"})
+        display = display.rename(columns={"model": "Model", "role": "Purpose",
+                    "validation_macro_f1": "Validation macro F1", "test_accuracy": "Test accuracy",
+                    "test_macro_f1": "Test macro F1", "trash_recall": "Trash recall"})
+        for col in ["Validation macro F1", "Test accuracy", "Test macro F1", "Trash recall"]:
+            display[col] = display[col].map(lambda value: f"{value:.2%}")
+        st.dataframe(display, hide_index=True, use_container_width=True)
+        st.caption("Macro F1 gives each material class equal weight. Trash recall measures how many actual trash images were recognized.")
         selected = st.selectbox("Inspect a model", report.model.tolist())
         plot = ROOT / f"reports/{selected}_confusion.png"
         if plot.exists():

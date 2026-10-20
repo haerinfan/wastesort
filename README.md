@@ -1,6 +1,6 @@
 # WasteSort
 
-## Start here: October 21 presentation
+## Start here: Goal Diggers learning materials
 
 The **Monday activity** presentation by **Goal Diggers** is ready as a short, approximately four-minute explanation of AI, ML, learning types, practical applications and supervised image classification in WasteSort:
 
@@ -10,6 +10,18 @@ The **Monday activity** presentation by **Goal Diggers** is ready as a short, ap
 - [Brief written explanation](presentation/Monday_Brief_Explanation.md)
 
 These materials focus on the assigned concepts. The broader implementation and experiment results below support later project work.
+
+### Day 2: Tuesday dataset preparation
+
+- [PowerPoint with speaker notes](presentation/day2/WasteSort_Tuesday_Dataset_Preparation.pptx)
+- [PDF slides](presentation/day2/WasteSort_Tuesday_Dataset_Preparation.pdf)
+- [Speaking guide, demo steps and Q&A](presentation/day2/WasteSort_Tuesday_Speaking_Guide.pdf)
+- [Brief explanation](presentation/day2/Tuesday_Brief_Explanation.md)
+- [Runnable preparation notebook](notebooks/WasteSort_Day2_Tuesday.ipynb)
+- [Executed notebook with saved outputs](notebooks/WasteSort_Day2_Tuesday_Executed.ipynb)
+- [Complete source-image inventory](reports/dataset_inventory.csv), [label encoding](reports/label_encoding.json), [preprocessing plan](reports/preprocessing.json) and [human review worksheet](reports/manual_review_worksheet.csv)
+
+The Tuesday notebook uses a CPU runtime and stops at prepared inputs. In Colab select **Runtime → Run all**. Its executed copy was verified locally on Windows; Google Colab execution remains unverified. The worksheet intentionally leaves human decisions blank.
 
 ## Project
 
@@ -54,6 +66,7 @@ CPU inference works without CUDA. All package installation is isolated in the vi
 - [Document review and changes](docs/REVIEW_AND_CHANGES.md)
 - [Revised proposal and weekly status](documents/)
 - [Training environment](reports/environment.json)
+- [Same-environment reproduction check](reports/reproduction_check.json)
 
 The deployment choice is recorded before test evaluation in `models/deployment.json`. Training uses approximately 70/15/15 grouped partitions and seed 42. Settings are selected with validation macro F1. The test images are evaluated only after checkpoints and the deployment choice are frozen.
 

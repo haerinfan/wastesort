@@ -17,6 +17,6 @@ for relative in ["data/provenance.json", "data/splits.csv", "reports/data_audit.
         shutil.copyfile(SOURCE / relative, run / relative)
 env = dict(os.environ, WASTESORT_ROOT=str(run))
 print(f"Fresh experiment: {run}", flush=True)
-for module in ["data", "train", "evaluate", "exercises", "figures"]:
+for module in ["data", "preparation", "train", "evaluate", "exercises", "figures"]:
     subprocess.run([sys.executable, "-u", "-m", f"wastesort.{module}"], cwd=SOURCE, env=env, check=True)
 print(f"Completed: {run}", flush=True)
