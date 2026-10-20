@@ -2,7 +2,7 @@
 
 ## Start here: October 21 presentation
 
-The assigned **Monday activity** for Lordy Allen D. Reyes is ready as a short, approximately four-minute explanation of AI, ML, learning types, practical applications and supervised image classification in WasteSort:
+The **Monday activity** presentation by **Goal Diggers** is ready as a short, approximately four-minute explanation of AI, ML, learning types, practical applications and supervised image classification in WasteSort:
 
 - [PowerPoint with speaker notes](presentation/WasteSort_Monday_Concepts.pptx)
 - [PDF slide backup](presentation/WasteSort_Monday_Concepts.pdf)

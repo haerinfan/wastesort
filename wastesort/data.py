@@ -98,6 +98,16 @@ def make_split(frame):
     return result
 
 
+def freeze_manifest(frame, manifest):
+    """Check existing text without rewriting its checksum-protected bytes."""
+    serialized = frame.to_csv(index=False, lineterminator="\n")
+    if manifest.exists():
+        if manifest.read_text(encoding="utf-8") != serialized:
+            raise ValueError("Frozen manifest would change. Review differences in a separate experiment.")
+    else:
+        manifest.write_bytes(serialized.encode("utf-8"))
+
+
 def prepare():
     raw = download()
     rows, rejected = [], []
@@ -139,10 +149,7 @@ def prepare():
         row["group"] = f"group_{group:04d}"
     frame = make_split(pd.DataFrame(rows))
     manifest = ROOT / "data/splits.csv"
-    serialized = frame.to_csv(index=False, lineterminator="\n")
-    if manifest.exists() and manifest.read_text(encoding="utf-8") != serialized:
-        raise ValueError("Frozen manifest would change. Review differences in a separate experiment.")
-    manifest.write_text(serialized, encoding="utf-8")
+    freeze_manifest(frame, manifest)
     reports = ROOT / "reports"
     reports.mkdir(exist_ok=True)
     pd.DataFrame(rejected, columns=["path", "reason", "retained"]).to_csv(reports / "excluded.csv", index=False)

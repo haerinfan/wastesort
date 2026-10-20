@@ -6,7 +6,7 @@ import pytest
 from PIL import Image
 
 from wastesort.common import CLASSES, ROOT, read_json, digest
-from wastesort.data import group_hashes, make_split
+from wastesort.data import group_hashes, make_split, freeze_manifest
 from wastesort.models import hog_features, read_upload
 
 
@@ -38,6 +38,24 @@ def test_transitive_near_duplicates():
     groups, _ = group_hashes([0, 1, 3, 255], distance=1)
     assert groups[0] == groups[1] == groups[2]
     assert groups[3] != groups[0]
+
+
+def test_existing_manifest_bytes_survive_platform_line_endings(tmp_path):
+    frame = pd.DataFrame({"path": ["data/raw/paper/paper1.jpg"], "label": ["paper"]})
+    manifest = tmp_path / "splits.csv"
+    original = frame.to_csv(index=False, lineterminator="\r\n").encode("utf-8")
+    manifest.write_bytes(original)
+    freeze_manifest(frame, manifest)
+    assert manifest.read_bytes() == original
+    with pytest.raises(ValueError, match="Frozen manifest"):
+        freeze_manifest(frame.assign(label="plastic"), manifest)
+
+
+def test_new_manifest_has_portable_lf_bytes(tmp_path):
+    frame = pd.DataFrame({"label": ["paper"]})
+    manifest = tmp_path / "splits.csv"
+    freeze_manifest(frame, manifest)
+    assert manifest.read_bytes() == b"label\npaper\n"
 
 
 def test_frozen_manifest_no_leakage():

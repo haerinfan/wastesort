@@ -1,0 +1,84 @@
+{
+  "source_images": 2527,
+  "usable_images": 2521,
+  "formats": {
+    "JPEG": 2527
+  },
+  "modes": {
+    "RGB": 2527
+  },
+  "dimensions": [
+    {
+      "width": 512,
+      "height": 384,
+      "images": 2527
+    }
+  ],
+  "label_encoding": {
+    "cardboard": 0,
+    "glass": 1,
+    "metal": 2,
+    "paper": 3,
+    "plastic": 4,
+    "trash": 5
+  },
+  "label_id_meaning": "Category identifiers only; not quantities or rankings.",
+  "hog": {
+    "size": [
+      64,
+      64
+    ],
+    "color": "grayscale",
+    "pixel_range": [
+      0,
+      1
+    ],
+    "features": 1764
+  },
+  "cnn": {
+    "size": [
+      160,
+      160
+    ],
+    "color": "RGB",
+    "pixel_range": [
+      0,
+      1
+    ],
+    "tensor_shape": [
+      3,
+      160,
+      160
+    ]
+  },
+  "mobilenet": {
+    "size": [
+      160,
+      160
+    ],
+    "color": "RGB",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "tensor_shape": [
+      3,
+      160,
+      160
+    ]
+  },
+  "augmentation": "Training only; see protocol.json. Validation/test transformations are deterministic.",
+  "split_counts": {
+    "train": 1774,
+    "test": 376,
+    "validation": 371
+  },
+  "manifest_sha256": "251874bb101118f346a20489163b4b455d79d690a4b404b6aafd51471d5d3f16",
+  "human_review": "Pending; the generated inventory and review worksheet do not constitute human approval."
+}

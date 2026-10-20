@@ -1,6 +1,6 @@
 # Monday expected output
 
-**Assigned presenter:** Lordy Allen D. Reyes  
+**Presenters:** Goal Diggers  
 **Task:** Discuss AI, machine learning, learning types and practical applications, and relate supervised image classification to WasteSort.
 
 Artificial intelligence is the broad field of building systems that perform tasks such as image recognition and decision-making. Machine learning is one approach within AI: a model learns patterns from examples and uses them to make predictions. Deep learning uses multilayer neural networks within machine learning.
