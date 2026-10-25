@@ -31,6 +31,6 @@ The application processes uploads in memory and does not explicitly save them. N
 
 TrashNet's MIT notice is reproduced in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md). Model architecture and pretrained weights come from [torchvision](https://docs.pytorch.org/vision/0.22/models/generated/torchvision.models.mobilenet_v2.html); attribution is not evidence of suitability for every downstream use.
 
-The deployment checkpoint and SHA-256 are recorded in [deployment.json](../models/deployment.json). The public repository includes the deployed checkpoint; other experiment checkpoints can be reproduced with the notebook or local runner. Only load trusted model files.
+The deployment checkpoint and SHA-256 are recorded in [deployment.json](../models/deployment.json). The public repository includes the deployment model, all five research checkpoints, and the KNN/Decision Tree exercise models. [Checkpoint checksums](../models/checksums.json) identify the shared files. They can also be reproduced with the notebook or local runner. Only load trusted model files.
 
 AI assisted implementation and experiment execution. Group members must review labels, reproduce the study, verify sources and explain the results. Instructor acceptance, individual completion and campus validation are not certified by this model card.

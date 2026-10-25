@@ -13,6 +13,9 @@ def test_app_starts_without_exception():
     assert not app.exception
     assert len(app.tabs) == 3
     assert "WasteSort" in app.caption[0].value or "WASTESORT" in app.caption[0].value
+    downloads = app.get("download_button")
+    assert len(downloads) == 9  # comparison plus eight presentation/notebook downloads
+    assert {item.label for item in app.expander} >= {"Day 1: Monday", "Day 2: Tuesday"}
 
 
 def test_deployed_model_accepts_rgb_without_dataset():

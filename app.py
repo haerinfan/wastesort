@@ -131,5 +131,31 @@ with about:
              "numerical learning dataset and is not used for waste-material prediction.")
     st.markdown("[Dataset and attribution](https://github.com/garythung/trashnet)")
     st.markdown("[Project repository](https://github.com/haerinfan/wastesort)")
+    st.divider()
+    st.subheader("Goal Diggers presentation materials")
+    st.write("Download the slides and speaking guides for group practice. Tuesday also includes a preparation notebook with saved outputs.")
+    resources = {
+        "Day 1: Monday": [
+            ("PowerPoint slides", "presentation/WasteSort_Monday_Concepts.pptx"),
+            ("PDF slides", "presentation/WasteSort_Monday_Concepts.pdf"),
+            ("Speaking guide", "presentation/WasteSort_Monday_Speaking_Guide.pdf"),
+        ],
+        "Day 2: Tuesday": [
+            ("PowerPoint slides", "presentation/day2/WasteSort_Tuesday_Dataset_Preparation.pptx"),
+            ("PDF slides", "presentation/day2/WasteSort_Tuesday_Dataset_Preparation.pdf"),
+            ("Speaking guide", "presentation/day2/WasteSort_Tuesday_Speaking_Guide.pdf"),
+            ("Preparation notebook", "notebooks/WasteSort_Day2_Tuesday.ipynb"),
+            ("Notebook with saved outputs", "notebooks/WasteSort_Day2_Tuesday_Executed.ipynb"),
+        ],
+    }
+    for column, (day, files) in zip(st.columns(2), resources.items()):
+        with column:
+            with st.expander(day):
+                for label, relative in files:
+                    resource = ROOT / relative
+                    if resource.exists():
+                        st.download_button(label, resource.read_bytes(), file_name=resource.name, key=relative)
+                    else:
+                        st.caption(f"{label} is missing from this copy. Download the complete repository ZIP.")
     st.caption("AI assisted implementation and experiment execution. Group verification, interpretation, "
                "and contribution records remain part of the research.")

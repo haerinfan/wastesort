@@ -1,0 +1,34 @@
+{
+  "cnn.pt": {
+    "bytes": 121813,
+    "sha256": "c1b36732ee069ae2ca6375dfe809a46190d0e18f3be77fdd2296273a6e7c54f1"
+  },
+  "cnn_weighted.pt": {
+    "bytes": 122387,
+    "sha256": "f7ddc64bf360054615aee1803cda2341ad9fb4b1c2fb34010371a6764465eec6"
+  },
+  "decision_tree_exercise.joblib": {
+    "bytes": 23015,
+    "sha256": "8c85bf9233ed67186121b82817e2876c6a7b2996d11f42702930d33d2053c6e7"
+  },
+  "deployed.pt": {
+    "bytes": 9158283,
+    "sha256": "1c357178a97d4da967ab60b9c67fc10292ee5319213b112ee7ec0676922734b2"
+  },
+  "knn_exercise.joblib": {
+    "bytes": 11086435,
+    "sha256": "6f25936c32401424fea11600f02d379c793e895a16237339e4596a598a28f993"
+  },
+  "mobilenet.pt": {
+    "bytes": 9158283,
+    "sha256": "1c357178a97d4da967ab60b9c67fc10292ee5319213b112ee7ec0676922734b2"
+  },
+  "random_forest.joblib": {
+    "bytes": 7673661,
+    "sha256": "e0cb14b50eb93a1cab0d9e0b9739086f9c542d71bde9c2d959223d0974440ab7"
+  },
+  "svm.joblib": {
+    "bytes": 13403665,
+    "sha256": "a2f8e424a2da336f269cb0b7126b30461995b5694365ccf4d9384517468df826"
+  }
+}

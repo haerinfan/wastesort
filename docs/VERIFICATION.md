@@ -23,6 +23,16 @@ An initial neural run stopped because CUDA's deterministic backward operation di
 
 ## What these checks do not establish
 
+### October 25 development checks
+
+- Installed requirements into a newly created project `.venv` on Windows with Python 3.12.14. The launcher completed its model checksum, label-order and CPU-inference checks. A second check reused the environment without reinstalling packages.
+- All 14 automated tests passed in that fresh environment, including setup retry behavior, installation fingerprint changes, corrupt-model/label/path rejection, batch error isolation, and app presentation downloads.
+- Started the app through `scripts/launch.py --port 8502`; Streamlit reported the loopback URL successfully. The Windows wrapper uses the project environment when it exists, otherwise the installed Python 3.12 launcher.
+- Ran `predict.py` against `plastic5.jpg` and saved a JSON prediction report. This checks execution on an existing dataset photo; it is not additional held-out evaluation.
+- Added Monday/Tuesday downloads in the About tab. The app test verifies all eight resources and the comparison download are present.
+
+The fresh environment check establishes app installation and inference, not a fresh-environment training reproduction. The model, frozen protocol, split and reported experiment results are unchanged.
+
 The additional offline candidate-pair gallery was opened in Edge: all 90 embedded images loaded, all 45 cards were present, and the first card's layout was visually checked. Generation asserts that both images in every candidate pair share a partition. This verifies the review aid, not human label decisions.
 
 Neither notebook has been executed inside Google Colab in this session. A full clean-environment training reproduction by a group member is pending. GPU and platform changes can affect exact numerical reproduction.

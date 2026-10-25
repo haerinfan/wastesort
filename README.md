@@ -34,7 +34,13 @@ The project compares HOG + SVM, HOG + Random Forest, a small CNN and MobileNetV2
 
 ## Run the app
 
+**Windows quick start:** install Python 3.12, extract the repository ZIP, and double-click **Start WasteSort.cmd**. It installs dependencies on the first run, checks the bundled model, and starts the app. See [setup and troubleshooting](docs/RUNNING.md). To check an existing environment without starting the app, run `python -m wastesort.doctor`.
+
+The **About the project** tab includes direct downloads for both presentation days. For prediction reports without a browser, see [the batch prediction instructions](docs/RUNNING.md#save-predictions-without-a-browser).
+
 Use **Python 3.12**. A trained deployment checkpoint is included; running the app does not require downloading the dataset or retraining.
+
+**Complete GitHub download:** Code → Download ZIP includes all saved research and exercise models, app code, reports, notebooks, and presentation materials. Model file checksums are in [models/checksums.json](models/checksums.json). Raw TrashNet images are downloaded separately by the preparation notebook; Python dependencies install during setup.
 
 ```powershell
 git clone https://github.com/haerinfan/wastesort.git

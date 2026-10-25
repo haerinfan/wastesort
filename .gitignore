@@ -11,6 +11,13 @@ models/*.joblib
 models/*.pt
 !models/deployed.pt
 !models/deployed.joblib
+!models/cnn.pt
+!models/cnn_weighted.pt
+!models/mobilenet.pt
+!models/svm.joblib
+!models/random_forest.joblib
+!models/knn_exercise.joblib
+!models/decision_tree_exercise.joblib
 *.log
 .DS_Store
 runs/
