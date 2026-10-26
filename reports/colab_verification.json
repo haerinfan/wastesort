@@ -1,0 +1,52 @@
+{
+  "execution_date": "2026-10-26",
+  "download_verified_date": "2026-10-27",
+  "platform": "Google Colab",
+  "gpu": "T4",
+  "source_commit": "ba00c8ee3b03c2f21e5128fda92d1ed4b1334b52",
+  "notebook_sha256": "1403c3bd5bbc56fae0407ef47f548915ba6baf2c8c6212281494ee8283dcd968",
+  "code_cells": 6,
+  "execution_counts": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "output_counts": [
+    2,
+    1,
+    4,
+    1,
+    4,
+    3
+  ],
+  "error_outputs": 0,
+  "selected_model": "mobilenet",
+  "colab_comparison_rounded": {
+    "svm": {
+      "accuracy": 0.659574,
+      "macro_f1": 0.635168
+    },
+    "random_forest": {
+      "accuracy": 0.635638,
+      "macro_f1": 0.602211
+    },
+    "cnn": {
+      "accuracy": 0.558511,
+      "macro_f1": 0.539926
+    },
+    "mobilenet": {
+      "accuracy": 0.845745,
+      "macro_f1": 0.812199
+    },
+    "cnn_weighted": {
+      "accuracy": 0.566489,
+      "macro_f1": 0.56892
+    }
+  },
+  "experiment_zip_retrieved": false,
+  "tuesday_separate_colab_execution": "unverified; browser debugger unattached",
+  "limitations": "Separate environment execution assisted through this chat, not an independent human replication. Published Windows checkpoints and benchmark remain unchanged."
+}

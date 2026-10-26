@@ -1,52 +1,52 @@
 kind,left,right,automated_reason,reviewer,decision,notes
-near_duplicate_candidate,data/raw/cardboard/cardboard15.jpg,data/raw/cardboard/cardboard361.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/cardboard/cardboard386.jpg,data/raw/cardboard/cardboard72.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/metal/metal165.jpg,data/raw/metal/metal166.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/metal/metal11.jpg,data/raw/metal/metal221.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/metal/metal120.jpg,data/raw/metal/metal50.jpg,pHash Hamming distance 4,,,
-near_duplicate_candidate,data/raw/metal/metal122.jpg,data/raw/metal/metal57.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/metal/metal155.jpg,data/raw/metal/metal6.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/metal/metal394.jpg,data/raw/metal/metal76.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/metal/metal149.jpg,data/raw/metal/metal9.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/paper/paper101.jpg,data/raw/paper/paper108.jpg,pHash Hamming distance 0,,,
-near_duplicate_candidate,data/raw/paper/paper136.jpg,data/raw/paper/paper148.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/paper/paper180.jpg,data/raw/paper/paper284.jpg,pHash Hamming distance 4,,,
-near_duplicate_candidate,data/raw/paper/paper240.jpg,data/raw/paper/paper306.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/paper/paper305.jpg,data/raw/paper/paper308.jpg,pHash Hamming distance 0,,,
-near_duplicate_candidate,data/raw/paper/paper246.jpg,data/raw/paper/paper349.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/paper/paper185.jpg,data/raw/paper/paper390.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/paper/paper152.jpg,data/raw/paper/paper392.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/paper/paper2.jpg,data/raw/paper/paper40.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/paper/paper265.jpg,data/raw/paper/paper408.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/paper/paper345.jpg,data/raw/paper/paper451.jpg,pHash Hamming distance 4,,,
-near_duplicate_candidate,data/raw/paper/paper459.jpg,data/raw/paper/paper466.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/paper/paper39.jpg,data/raw/paper/paper467.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/paper/paper135.jpg,data/raw/paper/paper496.jpg,pHash Hamming distance 4,,,
-near_duplicate_candidate,data/raw/paper/paper314.jpg,data/raw/paper/paper53.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/paper/paper522.jpg,data/raw/paper/paper534.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/paper/paper123.jpg,data/raw/paper/paper547.jpg,pHash Hamming distance 4,,,
-near_duplicate_candidate,data/raw/paper/paper176.jpg,data/raw/paper/paper549.jpg,pHash Hamming distance 4,,,
-near_duplicate_candidate,data/raw/paper/paper457.jpg,data/raw/paper/paper553.jpg,pHash Hamming distance 4,,,
-near_duplicate_candidate,data/raw/paper/paper540.jpg,data/raw/paper/paper56.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/paper/paper68.jpg,data/raw/paper/paper74.jpg,pHash Hamming distance 4,,,
-near_duplicate_candidate,data/raw/paper/paper474.jpg,data/raw/paper/paper89.jpg,pHash Hamming distance 4,,,
-near_duplicate_candidate,data/raw/paper/paper147.jpg,data/raw/paper/paper99.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/metal/metal154.jpg,data/raw/plastic/plastic10.jpg,pHash Hamming distance 4,,,
-near_duplicate_candidate,data/raw/metal/metal214.jpg,data/raw/plastic/plastic10.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/glass/glass127.jpg,data/raw/plastic/plastic11.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/metal/metal159.jpg,data/raw/plastic/plastic11.jpg,pHash Hamming distance 2,,,
-near_duplicate_candidate,data/raw/metal/metal149.jpg,data/raw/plastic/plastic135.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/plastic/plastic135.jpg,data/raw/plastic/plastic138.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/plastic/plastic105.jpg,data/raw/plastic/plastic350.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/plastic/plastic293.jpg,data/raw/plastic/plastic384.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/plastic/plastic153.jpg,data/raw/plastic/plastic9.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/plastic/plastic131.jpg,data/raw/trash/trash127.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/metal/metal178.jpg,data/raw/trash/trash128.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/plastic/plastic178.jpg,data/raw/trash/trash128.jpg,pHash Hamming distance 6,,,
-near_duplicate_candidate,data/raw/plastic/plastic481.jpg,data/raw/trash/trash133.jpg,pHash Hamming distance 6,,,
-excluded_file,data/raw/glass/glass115.jpg,,conflicting_labels_for_identical_pixels,,,
-excluded_file,data/raw/metal/metal91.jpg,,conflicting_labels_for_identical_pixels,,,
-excluded_file,data/raw/glass/glass176.jpg,,conflicting_labels_for_identical_pixels,,,
-excluded_file,data/raw/plastic/plastic152.jpg,,conflicting_labels_for_identical_pixels,,,
-excluded_file,data/raw/glass/glass389.jpg,,conflicting_labels_for_identical_pixels,,,
-excluded_file,data/raw/plastic/plastic332.jpg,,conflicting_labels_for_identical_pixels,,,
+near_duplicate_candidate,data/raw/cardboard/cardboard15.jpg,data/raw/cardboard/cardboard361.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching dark board edge, seam and surface pattern; exposure differs. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/cardboard/cardboard386.jpg,data/raw/cardboard/cardboard72.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,uncertain,2026-10-26. Similar plain board texture and diagonal edge; insufficient unique markings. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/metal/metal165.jpg,data/raw/metal/metal166.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,uncertain,"2026-10-26. Both are foil; crumpled shape and size differ, so physical identity is unresolved. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/metal/metal11.jpg,data/raw/metal/metal221.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching embossed tray logo, rim and dents. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/metal/metal120.jpg,data/raw/metal/metal50.jpg,pHash Hamming distance 4,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching oval tray, logo and dent pattern. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/metal/metal122.jpg,data/raw/metal/metal57.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching distinctive foil folds, outline and shadow. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/metal/metal155.jpg,data/raw/metal/metal6.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Different can-top graphics and pull-tab appearance. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/metal/metal394.jpg,data/raw/metal/metal76.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching can interior rings, seam and foreground rim. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/metal/metal149.jpg,data/raw/metal/metal9.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,uncertain,"2026-10-26. Same printed beverage design, but one can is crushed; identity is not established. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper101.jpg,data/raw/paper/paper108.jpg,pHash Hamming distance 0,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching advertising print, fold, crop and placement. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper136.jpg,data/raw/paper/paper148.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching home magazine cover, corners and orientation. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper180.jpg,data/raw/paper/paper284.jpg,pHash Hamming distance 4,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching advertisement, crease and sheet placement. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper240.jpg,data/raw/paper/paper306.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching envelope stamp, torn edge and wrinkles. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper305.jpg,data/raw/paper/paper308.jpg,pHash Hamming distance 0,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching layered flyers, print, folds and placement. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper246.jpg,data/raw/paper/paper349.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching blue advertising sheet and curl. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper185.jpg,data/raw/paper/paper390.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching printed people, page corner and position. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper152.jpg,data/raw/paper/paper392.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching grocery advertisements and folded geometry. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper2.jpg,data/raw/paper/paper40.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching grocery offers, page edges and placement. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper265.jpg,data/raw/paper/paper408.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching blue furniture flyer, text and curled edge. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper345.jpg,data/raw/paper/paper451.jpg,pHash Hamming distance 4,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching household flyer, print and cropping. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper459.jpg,data/raw/paper/paper466.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching razor advertisement and sharply folded sheet. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper39.jpg,data/raw/paper/paper467.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,likely_same_item,"2026-10-26. Matching envelope, printed lizard and background shadow. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/paper/paper135.jpg,data/raw/paper/paper496.jpg,pHash Hamming distance 4,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching automotive advertisement and torn binding edge. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper314.jpg,data/raw/paper/paper53.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching illustrated book pages and curvature. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper522.jpg,data/raw/paper/paper534.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching grocery sheet and rolled corner. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper123.jpg,data/raw/paper/paper547.jpg,pHash Hamming distance 4,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching crumpled grocery sheet folds and printed regions. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper176.jpg,data/raw/paper/paper549.jpg,pHash Hamming distance 4,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching food advertisement and page edges; shifted view. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper457.jpg,data/raw/paper/paper553.jpg,pHash Hamming distance 4,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching grocery coupons and curved sheet. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper540.jpg,data/raw/paper/paper56.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching red advertisement and distinctive central tear. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper68.jpg,data/raw/paper/paper74.jpg,pHash Hamming distance 4,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching furniture advertisement and curled corner. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper474.jpg,data/raw/paper/paper89.jpg,pHash Hamming distance 4,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching food menu print and page edge. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/paper/paper147.jpg,data/raw/paper/paper99.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,likely_same_item,2026-10-26. Matching layered flyers and distinctive folded geometry. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/metal/metal154.jpg,data/raw/plastic/plastic10.jpg,pHash Hamming distance 4,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Silver beverage bottle versus transparent red-capped bottle. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/metal/metal214.jpg,data/raw/plastic/plastic10.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Crushed metal can versus transparent red-capped bottle. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/glass/glass127.jpg,data/raw/plastic/plastic11.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Top view of dark glass bottle versus side view of labeled plastic bottle. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/metal/metal159.jpg,data/raw/plastic/plastic11.jpg,pHash Hamming distance 2,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Crushed pull-tab can versus green-labeled plastic bottle. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/metal/metal149.jpg,data/raw/plastic/plastic135.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Purple beverage can versus clear water bottle. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/plastic/plastic135.jpg,data/raw/plastic/plastic138.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Water bottles show different label designs and shapes; similarity of scene only. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/plastic/plastic105.jpg,data/raw/plastic/plastic350.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,uncertain,2026-10-26. Same bottle brand and green cap; orientation and deformation differ. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/plastic/plastic293.jpg,data/raw/plastic/plastic384.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,uncertain,"2026-10-26. Same water brand; different rotation, insufficient unique evidence of identity. Retain published grouping; no relabeling or split change."
+near_duplicate_candidate,data/raw/plastic/plastic153.jpg,data/raw/plastic/plastic9.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,uncertain,2026-10-26. Same red-cap product design; different crushing and rotation. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/plastic/plastic131.jpg,data/raw/trash/trash127.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Top view of bottle cap versus small cylindrical tube. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/metal/metal178.jpg,data/raw/trash/trash128.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Beverage can versus small cylindrical tube. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/plastic/plastic178.jpg,data/raw/trash/trash128.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Open orange container versus small cylindrical tube. Retain published grouping; no relabeling or split change.
+near_duplicate_candidate,data/raw/plastic/plastic481.jpg,data/raw/trash/trash133.jpg,pHash Hamming distance 6,AI-assisted visual review for Goal Diggers,visibly_distinct,2026-10-26. Printed label strips versus turquoise container lid. Retain published grouping; no relabeling or split change.
+excluded_file,data/raw/glass/glass115.jpg,,conflicting_labels_for_identical_pixels,AI-assisted audit-record review for Goal Diggers,retain_exclusion,2026-10-26. Retain the recorded exact-pixel/conflicting-label exclusion; no guessed replacement label.
+excluded_file,data/raw/metal/metal91.jpg,,conflicting_labels_for_identical_pixels,AI-assisted audit-record review for Goal Diggers,retain_exclusion,2026-10-26. Retain the recorded exact-pixel/conflicting-label exclusion; no guessed replacement label.
+excluded_file,data/raw/glass/glass176.jpg,,conflicting_labels_for_identical_pixels,AI-assisted audit-record review for Goal Diggers,retain_exclusion,2026-10-26. Retain the recorded exact-pixel/conflicting-label exclusion; no guessed replacement label.
+excluded_file,data/raw/plastic/plastic152.jpg,,conflicting_labels_for_identical_pixels,AI-assisted audit-record review for Goal Diggers,retain_exclusion,2026-10-26. Retain the recorded exact-pixel/conflicting-label exclusion; no guessed replacement label.
+excluded_file,data/raw/glass/glass389.jpg,,conflicting_labels_for_identical_pixels,AI-assisted audit-record review for Goal Diggers,retain_exclusion,2026-10-26. Retain the recorded exact-pixel/conflicting-label exclusion; no guessed replacement label.
+excluded_file,data/raw/plastic/plastic332.jpg,,conflicting_labels_for_identical_pixels,AI-assisted audit-record review for Goal Diggers,retain_exclusion,2026-10-26. Retain the recorded exact-pixel/conflicting-label exclusion; no guessed replacement label.

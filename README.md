@@ -1,5 +1,11 @@
 # WasteSort
 
+## Week 12 completion pack
+
+Start with the [Monday-Sunday guide](docs/WEEK12_GUIDE.md) and [current status](docs/WEEK12_STATUS.md). Wednesday now has [per-image validation predictions](reports/intro_validation_predictions.csv), [sample predictions](reports/intro_sample_predictions.csv), and separate KNN/Decision Tree confusion matrices. The [duplicate-review record](docs/DUPLICATE_REVIEW.md) contains dated AI-assisted decisions for all 45 candidates. Saturday has a [six-slide PowerPoint](presentation/day6/WasteSort_Saturday_Demo.pptx) and [PDF backup](presentation/day6/WasteSort_Saturday_Demo.pdf). The [methodology change note](docs/METHODOLOGY_CHANGE_NOTE.md) is ready for instructor review; approval is not asserted.
+
+The full training notebook has now [completed in Google Colab](docs/COLAB_VERIFICATION.md); [download the executed copy](notebooks/WasteSort_Colab_Executed.ipynb) to inspect all six cells and saved outputs. The separate Tuesday Colab check remains pending.
+
 ## Start here: Goal Diggers learning materials
 
 The **Monday activity** presentation by **Goal Diggers** is ready as a short, approximately four-minute explanation of AI, ML, learning types, practical applications and supervised image classification in WasteSort:
@@ -22,7 +28,7 @@ These materials focus on the assigned concepts. The broader implementation and e
 - [Complete source-image inventory](reports/dataset_inventory.csv), [label encoding](reports/label_encoding.json), [preprocessing plan](reports/preprocessing.json) and [human review worksheet](reports/manual_review_worksheet.csv)
 - [Offline gallery of all 45 candidate pairs](reports/candidate_review.html): download and open the HTML file in a browser, then record decisions in the worksheet. Regenerate after downloading the dataset with `python -m wastesort.review_gallery`.
 
-The Tuesday notebook uses a CPU runtime and stops at prepared inputs. In Colab select **Runtime → Run all**. Its executed copy was verified locally on Windows; Google Colab execution remains unverified. The worksheet intentionally leaves human decisions blank.
+The Tuesday notebook uses a CPU runtime and stops at prepared inputs. In Colab select **Runtime → Run all**. Its executed copy was verified locally on Windows; Google Colab execution remains unverified. The worksheet now contains dated AI-assisted visual screening for all 45 pairs; it is not an independent human audit. Older lesson exports describe the earlier blank worksheet.
 
 ## Project
 
@@ -30,7 +36,7 @@ A six-class waste-material research prototype. Upload one item photo in the Stre
 
 The project compares HOG + SVM, HOG + Random Forest, a small CNN and MobileNetV2. KNN and Decision Tree are introductory exercises; a small-CNN class-weighting ablation and a separate numerical regression exercise are also included.
 
-**This is an initial benchmark study, not a validated campus disposal system.** Campus bin rules, human image review and group verification remain pending. The app can label unrelated objects as waste and does not detect hazards or contamination.
+**This is an initial benchmark study, not a validated campus disposal system.** Campus bin rules, a complete independent human audit and campus validation remain pending. The app can label unrelated objects as waste and does not detect hazards or contamination.
 
 ## Run the app
 

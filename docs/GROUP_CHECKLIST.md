@@ -1,15 +1,11 @@
-# Remaining group work
+# Follow-up after the weekly activity
 
-- Review the revised protocol with the instructor, especially descriptive comparisons replacing unspecified hypothesis tests and PyTorch replacing TensorFlow/Keras.
-- Rerun the Colab notebook and compare the saved manifest, exclusions and validation/test records.
-- Download and open [the candidate-pair gallery](../reports/candidate_review.html) for side-by-side inspection; record decisions in [the worksheet](../reports/manual_review_worksheet.csv). The gallery works offline and does not save decisions.
-- Inspect the local visual inventory generated at `reports/audit_images/inventory.html`, all 45 candidate pairs in `reports/near_duplicate_candidates.csv`, excluded conflicting examples and sampled errors. Record findings without tuning to the published test set.
-- If image audit changes the dataset, create a separately versioned study and explain why its results differ. The existing test set is already exposed.
-- Verify the bibliography against the original papers and required citation style.
-- Obtain official campus disposal rules before enabling any bin guidance.
-- Collect permissioned campus-item photos for a separately reported demonstration set. Do not combine those scores with TrashNet.
-- Test uploads containing glass/plastic confusion, composite packaging, crowded scenes and unrelated objects. Record limitations.
-- Record actual member contributions and completion dates. Each member should explain preprocessing, leakage prevention, macro F1, validation versus test, model selection and errors.
-- Complete research chapters, presentation slides and any instructor-specific requirements from measured evidence.
+See [current status](WEEK12_STATUS.md) for completed Monday-Sunday outputs. All members contribute jointly through the shared chat; no work is held for an assigned member.
 
-Suggested allocation follows the supplied plan, not a claim of completed work: Lordy coordinates integration, Josh reviews literature and neural experiments, and John reviews data and prototype behavior. All members review results and practice the defense.
+- Complete the separate Tuesday Colab execution when the browser connection is available; its local notebook already has eight executed cells.
+- Obtain instructor review of the [methodology changes](METHODOLOGY_CHANGE_NOTE.md). The prepared message has not been sent and approval is not recorded.
+- Practice explaining the slides and results. File completion does not prove oral delivery or individual mastery.
+- If required, obtain independent human review of the [AI-assisted pair decisions](DUPLICATE_REVIEW.md). The frozen study was not changed. Any label/group changes require a separately versioned study because the existing test results are exposed.
+- For later research weeks, verify the bibliography, complete the research chapters, obtain official campus disposal rules, collect permissioned campus photos for separate evaluation, and arrange independent replication.
+
+The full training notebook has executed in Colab; its cross-platform results and limitations are recorded separately. Do not replace the original benchmark with a preferred rerun.
