@@ -5,6 +5,7 @@ Updated November 7, 2026.
 ## Implemented and recorded
 
 - Local upload app, saved trained checkpoints, model integrity checks and batch prediction export.
+- Week 14 Introduction and Methodology manuscript in Word/PDF, with all 13 required topics and 13 references checked against publisher, author, or dataset sources on November 7.
 - Original TrashNet benchmark with fixed partitions, model comparison and error analysis.
 - KNN, Decision Tree and separate Linear Regression exercises, with prediction evidence.
 - Monday/Tuesday lesson decks, Saturday demonstration deck, weekly guide and presentation script.
@@ -20,7 +21,7 @@ All 19 automated tests passed. The new evaluator was also run with the real save
 
 | Item | Next action |
 |---|---|
-| Research chapters and references | Verify the proposal bibliography and write the full research report from recorded methods/results. |
+| Week 16 manuscript | Write Results and Discussion, conclusions and recommendations from the saved evidence; integrate the completed Week 14 manuscript. The historical proposal bibliography is not the current manuscript reference list. |
 | Campus-photo evaluation | Collect new permissioned photos and labels, document sampling, then use the separate evaluator. No campus results exist yet. |
 | Campus disposal guidance | Obtain authoritative campus rules before adding bin recommendations. |
 | Methodology approval | Record instructor feedback on framework, grouped split and descriptive statistical scope. No approval is recorded. |

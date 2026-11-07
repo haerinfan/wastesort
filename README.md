@@ -2,6 +2,8 @@
 
 ## Research progress submission
 
+**Week 14:** [Introduction and Methodology PDF](documents/Goal_Diggers_WasteSort_Introduction_and_Methodology.pdf) · [editable Word manuscript](documents/Goal_Diggers_WasteSort_Introduction_and_Methodology.docx). Covers the November 3–7 submission with 13 required topics and 13 references. See the submission guide for the accompanying datasets, trained models and preliminary evidence. Results and Discussion are the Week 16 manuscript deliverable.
+
 This initial study uses **secondary TrashNet data**; no primary or campus data collection is claimed. The [submission guide](docs/SUBMISSION_GUIDE.md) links the dataset CSVs, source code, actual training evidence, results PDF and brief technical report to each submission requirement.
 
 Latest: [project status and remaining work](docs/PROJECT_STATUS.md), updated November 7, 2026.

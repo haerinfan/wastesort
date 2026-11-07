@@ -1,5 +1,13 @@
 # Research progress submission
 
+## Current Week 14 submission
+
+Use the [Introduction and Methodology PDF](../documents/Goal_Diggers_WasteSort_Introduction_and_Methodology.pdf) or its [editable Word version](../documents/Goal_Diggers_WasteSort_Introduction_and_Methodology.docx). The [manuscript source](WEEK14_MANUSCRIPT.md) covers all six Introduction topics and seven Methodology topics in the November 3–7 instructions, with 13 references. This is the current manuscript; older proposal documents are historical and are superseded where terminology or implementation differs. In particular, TrashNet is secondary data, even where an older proposal called it primary.
+
+Submit the manuscript together with the datasets, trained models in `models/`, source code, and preliminary outputs mapped below. The separate `Goal_Diggers_Week14_Submission.zip` supplied in chat includes the source image archive and a current project snapshot. Results and Discussion, conclusions, and the full IMRAD paper remain the Week 16 deliverable for November 16–21, 2026.
+
+The supplied checklist permits primary **and/or** secondary data. This package supplies authentic secondary data; no uncollected primary dataset is represented as complete.
+
 This is a **secondary-data study**. The observations are TrashNet images collected by Gary Thung and Mindy Yang, downloaded and prepared for WasteSort. No primary observations or campus collection are claimed. Derived image features remain derivatives of secondary data. If primary collection is required by the instructor, that requirement remains outstanding.
 
 | Requirement | Submitted evidence |
