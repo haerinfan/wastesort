@@ -1,5 +1,7 @@
 # WasteSort
 
+Latest: [project status and remaining work](docs/PROJECT_STATUS.md), updated November 7, 2026.
+
 ## Week 12 completion pack
 
 Start with the [Monday-Sunday guide](docs/WEEK12_GUIDE.md) and [current status](docs/WEEK12_STATUS.md). Wednesday now has [per-image validation predictions](reports/intro_validation_predictions.csv), [sample predictions](reports/intro_sample_predictions.csv), and separate KNN/Decision Tree confusion matrices. The [duplicate-review record](docs/DUPLICATE_REVIEW.md) contains dated AI-assisted decisions for all 45 candidates. Saturday has a [six-slide PowerPoint](presentation/day6/WasteSort_Saturday_Demo.pptx) and [PDF backup](presentation/day6/WasteSort_Saturday_Demo.pdf). The [methodology change note](docs/METHODOLOGY_CHANGE_NOTE.md) is ready for instructor review; approval is not asserted.
@@ -123,6 +125,10 @@ git push -u origin yourname/task-name
 ```
 
 Record real contributions in [CONTRIBUTIONS.md](CONTRIBUTIONS.md). Suggested next tasks are in [GROUP_CHECKLIST.md](docs/GROUP_CHECKLIST.md). AI-generated work and automated experiment execution must not be reported as independent member completion.
+
+## Evaluate new labeled photos
+
+Use the [separate-photo evaluation guide](docs/CAMPUS_EVALUATION.md) and [empty label template](templates/photo_labels.csv). The evaluator reports class metrics and predictions without changing the original benchmark. Actual campus photos and independently assigned labels are still needed.
 
 ## Tests
 

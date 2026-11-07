@@ -1,5 +1,7 @@
 # Follow-up after the weekly activity
 
+For the latest implementation and remaining research work, see [project status](PROJECT_STATUS.md). A [separate-photo evaluator](CAMPUS_EVALUATION.md) is ready; actual campus data is still needed.
+
 See [current status](WEEK12_STATUS.md) for completed Monday-Sunday outputs. All members contribute jointly through the shared chat; no work is held for an assigned member.
 
 - Complete the separate Tuesday Colab execution when the browser connection is available; its local notebook already has eight executed cells.
