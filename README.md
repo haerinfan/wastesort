@@ -1,5 +1,9 @@
 # WasteSort
 
+## Research progress submission
+
+This initial study uses **secondary TrashNet data**; no primary or campus data collection is claimed. The [submission guide](docs/SUBMISSION_GUIDE.md) links the dataset CSVs, source code, actual training evidence, results PDF and brief technical report to each submission requirement.
+
 Latest: [project status and remaining work](docs/PROJECT_STATUS.md), updated November 7, 2026.
 
 ## Week 12 completion pack
