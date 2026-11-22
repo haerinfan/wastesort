@@ -1,0 +1,68 @@
+{
+  "version": "1.1",
+  "change_note": "1.1 (before any generation): size raised to mirror the usable TrashNet class counts (2,521 images) so the primary and secondary datasets are compared at equal size; prompt vocabulary widened for diversity at that size.",
+  "dataset_name": "WasteSort primary set (synthetic)",
+  "nature": "AI-generated synthetic images approved by the instructor as the study's primary dataset. No photograph was taken of a real object.",
+  "fixed_before_generation": "Generation, quality control, split and experiment settings below are fixed before any image is generated or any model is evaluated on this set.",
+  "seed": 42,
+  "classes": ["cardboard", "glass", "metal", "paper", "plastic", "trash"],
+  "generator": {
+    "model": "stabilityai/sdxl-turbo",
+    "revision": "71153311d3dbb46851df1931d3ca6e939de83304",
+    "license": "Stability AI Non-Commercial Research Community License (sai-nc-community); non-commercial and research use",
+    "steps": 4,
+    "guidance_scale": 0.0,
+    "generate_size": [512, 512],
+    "saved_size": [512, 384],
+    "crop": "centre crop to 4:3, matching the TrashNet resized archive's 512 x 384 frame",
+    "jpeg_quality": 92,
+    "candidate_multiplier": 1.8
+  },
+  "prompt_template": "a realistic smartphone photo of {condition} {item}, {setting}, {lighting}, {angle}, single object centred and in focus",
+  "items": {
+    "cardboard": ["a corrugated cardboard shipping box", "a flattened cardboard box", "a cardboard pizza box", "a cardboard paper towel tube", "a cardboard cereal box", "a cardboard egg tray", "a small cardboard shoe box", "a cardboard drink carrier", "a cardboard tissue box", "a piece of corrugated cardboard"],
+    "glass": ["a clear glass water bottle", "a green glass beer bottle", "a brown glass bottle", "a glass jam jar", "a glass sauce jar", "a small glass medicine bottle", "a glass soda bottle", "a glass wine bottle", "a glass coffee jar", "a glass baby food jar"],
+    "metal": ["an aluminium soda can", "a steel food tin can", "an aluminium foil food tray", "a metal bottle cap", "an aluminium energy drink can", "a steel coffee tin", "a metal sardine can", "a ball of aluminium foil", "a metal paint can lid", "an aluminium beer can"],
+    "paper": ["a sheet of white printer paper", "a newspaper", "a brown paper bag", "a notebook page with illegible handwriting", "a paper envelope with no writing", "a glossy magazine", "a stack of office paper", "a paper flyer with blurred printing", "a shredded paper pile", "a paper cup sleeve"],
+    "plastic": ["a clear plastic water bottle", "a plastic milk tea cup with a lid", "a plastic shampoo bottle", "a plastic food container", "a plastic detergent bottle", "a plastic yoghurt cup", "a plastic soft drink bottle", "a plastic takeaway salad box", "a plastic ketchup squeeze bottle", "a plastic cooking oil bottle"],
+    "trash": ["a potato chip bag", "a candy wrapper", "a styrofoam cup", "a styrofoam takeout food box", "a disposable face mask", "a kitchen sponge", "a plastic-lined paper coffee cup", "an instant noodle cup", "a plastic straw and its wrapper", "a snack biscuit wrapper"]
+  },
+  "conditions": {
+    "cardboard": ["a clean", "a dented", "a slightly wet", "a stained", "a torn"],
+    "glass": ["a clean", "an empty", "a dusty", "a label-free", "a slightly dirty"],
+    "metal": ["a clean", "a crushed", "a dented", "a slightly rusty", "an empty"],
+    "paper": ["a clean", "a crumpled", "a folded", "a slightly wet", "a torn"],
+    "plastic": ["a clean", "a crushed", "an empty", "a scratched", "a slightly dirty"],
+    "trash": ["a dirty", "a crumpled", "a used", "a squashed", "a stained"]
+  },
+  "settings": ["on a concrete campus walkway", "on a cafeteria table", "on green grass", "on a wooden classroom desk", "on a tiled hallway floor", "beside an outdoor waste bin", "on a park bench", "on a plain white background", "on a library study table", "on an asphalt parking lot", "on a laboratory bench", "on dry fallen leaves"],
+  "lighting": ["in bright daylight", "under overcast light", "under fluorescent indoor lighting", "in warm late-afternoon light", "in dim evening light"],
+  "angles": ["top-down view", "45-degree angle view", "close-up view", "side view"],
+  "quality_control": {
+    "checker": "openai/clip-vit-base-patch32",
+    "checker_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "class_descriptions": {
+      "cardboard": "a cardboard box or cardboard packaging",
+      "glass": "a glass bottle or glass jar",
+      "metal": "a metal can or aluminium item",
+      "paper": "a sheet of paper, a newspaper or a paper bag",
+      "plastic": "a plastic bottle or plastic container",
+      "trash": "non-recyclable waste such as a snack wrapper, styrofoam or a used mask"
+    },
+    "text_template": "a photo of {description}",
+    "min_label_probability": 0.40,
+    "min_margin": 0.10,
+    "near_duplicate_hamming": 6,
+    "target_counts": {"cardboard": 403, "glass": 498, "metal": 409, "paper": 594, "plastic": 480, "trash": 137},
+    "target_counts_source": "usable TrashNet images per class in data/splits.csv (2,521 total)",
+    "min_fraction_of_target": 0.95,
+    "selection": "round-robin over items in candidate order so every item is represented"
+  },
+  "split": "group = class|item|setting; StratifiedGroupKFold(20, shuffle=True, random_state=42); folds 0-13/14-16/17-19 as in protocol.json",
+  "experiments": {
+    "domain_shift": "the five frozen TrashNet research checkpoints are evaluated without change on every primary-set image and on the primary test split",
+    "fine_tune": "MobileNetV2 with protocol.json settings trained on TrashNet train plus primary-set train; epoch chosen by macro F1 on the combined validation split; evaluated once on the TrashNet test split and once on the primary-set test split",
+    "deployment": "models/deployment.json is not changed; the fine-tuned model is an optional second model in the app"
+  },
+  "claim_limit": "Results on synthetic images measure transfer to generated scenes. They do not measure accuracy on real campus waste."
+}

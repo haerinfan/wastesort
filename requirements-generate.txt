@@ -1,0 +1,5 @@
+# Extra packages for generating the primary set (synthetic) on a GPU (Colab).
+# Install after requirements.txt. Not needed to run the app or the tests.
+diffusers==0.41.0
+transformers==5.22.2
+accelerate==1.15.0

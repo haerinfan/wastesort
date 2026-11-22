@@ -4,7 +4,7 @@
 
 **Week 14:** [Introduction and Methodology PDF](documents/Goal_Diggers_WasteSort_Introduction_and_Methodology.pdf) · [editable Word manuscript](documents/Goal_Diggers_WasteSort_Introduction_and_Methodology.docx). Covers the November 3–7 submission with 13 required topics and 13 references. See the submission guide for the accompanying datasets, trained models and preliminary evidence. Results and Discussion are the Week 16 manuscript deliverable.
 
-This initial study uses **secondary TrashNet data**; no primary or campus data collection is claimed. The [submission guide](docs/SUBMISSION_GUIDE.md) links the dataset CSVs, source code, actual training evidence, results PDF and brief technical report to each submission requirement.
+The study compares **secondary TrashNet data** with a **primary set (synthetic)**: 2,521 AI-generated images of waste items in campus-like scenes, with the same class counts as TrashNet, which the instructor approved as primary data. No real photographs or campus data collection are claimed. See the [primary set datasheet](docs/PRIMARY_DATASET.md). The [submission guide](docs/SUBMISSION_GUIDE.md) links the dataset CSVs, source code, actual training evidence, results PDF and brief technical report to each submission requirement.
 
 Latest: [project status and remaining work](docs/PROJECT_STATUS.md), updated November 7, 2026.
 
@@ -115,6 +115,18 @@ This creates a new directory under `runs/` and runs:
 The pipeline refuses to retrain over an experiment that already contains final test results. Use a fresh run for reproduction. Do not select a favorable seed or revise the model based on published test errors while presenting the same test as unseen.
 
 `WASTESORT_ROOT` can point to a fresh experiment directory containing `protocol.json`. The source code remains in this repository; data, checkpoints and reports are written to that directory.
+
+## Primary set (synthetic)
+
+Open [WasteSort_Primary_Colab.ipynb](notebooks/WasteSort_Primary_Colab.ipynb) in Colab with a GPU and select **Run all**. It takes roughly 2–2.5 hours on a T4. It:
+
+1. generates about 4,540 candidate images with SDXL-Turbo from the fixed prompt plan in [protocol_primary.json](protocol_primary.json)
+2. scores each with CLIP, removes mismatches and near-duplicates, selects to TrashNet's class counts (2,521 images) and makes grouped 70/15/15 splits
+3. compares the primary and secondary datasets: class balance, appearance statistics, feature overlap and domain separability
+4. tests the frozen TrashNet models on the primary set (domain shift), and fine-tunes MobileNetV2 on both datasets
+5. downloads a ZIP. Unzip it at the repository root, run the tests and commit.
+
+The app's **Datasets** tab shows the comparison. The **Classify** tab offers the fine-tuned model as an optional second model. The published TrashNet results and `models/deployment.json` are unchanged. Results on synthetic images do not measure real campus accuracy.
 
 ## Work with groupmates
 

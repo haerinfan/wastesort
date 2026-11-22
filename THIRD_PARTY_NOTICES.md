@@ -42,3 +42,9 @@ Pretrained ImageNet parameters are a dependency of the transfer-learning checkpo
 ## Project code
 
 No additional open-source license is granted for the group's original code in this initial setup. Public visibility permits viewing the work but is not a substitute for a group-approved license. Third-party licenses continue to apply to their respective components.
+
+## Primary set (synthetic) tools
+
+The primary-set images are generated with **SDXL-Turbo** by Stability AI (https://huggingface.co/stabilityai/sdxl-turbo, revision 71153311d3dbb46851df1931d3ca6e939de83304). It is used under the Stability AI Non-Commercial Research Community License, which the model card describes as allowing non-commercial and research use. The generated images are used only in this non-commercial course study.
+
+Quality control uses **CLIP ViT-B/32** by OpenAI (https://huggingface.co/openai/clip-vit-base-patch32, revision 3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268), released by OpenAI under the MIT license in https://github.com/openai/CLIP.

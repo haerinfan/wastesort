@@ -11,7 +11,7 @@ from wastesort.models import Predictor
 def test_app_starts_without_exception():
     app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "app.py")).run(timeout=60)
     assert not app.exception
-    assert len(app.tabs) == 3
+    assert len(app.tabs) == 4
     assert "WasteSort" in app.caption[0].value or "WASTESORT" in app.caption[0].value
     downloads = app.get("download_button")
     assert len(downloads) == 9  # comparison plus eight presentation/notebook downloads

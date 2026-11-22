@@ -71,9 +71,15 @@ def build_network(kind, pretrained=False):
 
 
 class Predictor:
-    """Loads only the project's trusted, locally bundled deployment checkpoint."""
-    def __init__(self):
-        self.metadata = read_json(ROOT / "models/deployment.json")
+    """Loads only the project's trusted, locally bundled checkpoints (deployment by default)."""
+    ALLOWED = ("models/deployment.json", "models/primary_finetuned.json")
+
+    def __init__(self, metadata="models/deployment.json"):
+        if metadata not in self.ALLOWED:
+            raise ValueError("Unknown model metadata file.")
+        self.metadata = read_json(ROOT / metadata)
+        if self.metadata["classes"] != CLASSES:
+            raise ValueError("Model labels do not match the app's label order.")
         self.kind = self.metadata["kind"]
         path = ROOT / self.metadata["artifact"]
         from .common import digest

@@ -51,3 +51,7 @@ KNN and Decision Tree were evaluated on validation data for introductory learnin
 - [Training example grid](../reports/training_examples.png)
 
 The dataset mostly shows single items against simple backgrounds. No independent campus-photo evaluation has been completed. Unrelated objects, multiple items, contamination and hazardous waste remain outside scope. No model was changed in response to the final test results.
+
+## Primary set (synthetic): pending
+
+Results for the AI-generated primary set appear here after the [primary-set notebook](../notebooks/WasteSort_Primary_Colab.ipynb) runs. Copy the numbers from `reports/primary_set/domain_shift.csv`, `finetune_comparison.csv` and `dataset_comparison.json`. Report them separately from the TrashNet results above, together with the QC rejection counts in `reports/primary_set/audit.json`. The TrashNet numbers above are unchanged.

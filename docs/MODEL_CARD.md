@@ -19,6 +19,10 @@ After exclusion of six conflicting duplicate files, 2,521 images were partitione
 
 The model was selected using validation macro F1, then evaluated once on the held-out test split. Test accuracy was 84.57%, macro F1 81.22%, and trash recall 55.56% (10/18). See [results](RESULTS.md) for all comparisons and uncertainty.
 
+## Optional second model: TrashNet + primary set (synthetic)
+
+`models/mobilenet_primary.pt` uses the same architecture and settings. It was trained on TrashNet training images plus AI-generated primary-set training images ([datasheet](PRIMARY_DATASET.md)), and its epoch was chosen on combined validation. It is not the deployment model. The app offers it only when `models/primary_finetuned.json` is present. Its scores on the primary-set test split show performance on generated scenes, not on real campus photos.
+
 ## Appropriate use and limitations
 
 Use for classroom demonstrations and research comparisons under conditions similar to the source images. Do not use it to decide whether a material is safe, clean, recyclable, hazardous or allowed in a particular campus bin. Campus guidance requires separately verified institutional rules.

@@ -22,3 +22,5 @@ models/*.pt
 .DS_Store
 runs/
 local_evaluation/
+!models/mobilenet_primary.pt
+data/primary_set/candidates/
