@@ -180,10 +180,19 @@ with research:
                          hide_index=True, use_container_width=True)
         st.caption("Synthetic images measure transfer to generated scenes, not accuracy on real campus waste.")
 with datasets:
-    st.subheader("Primary set (synthetic) and secondary data (TrashNet)")
+    st.subheader("Primary dataset and secondary data (TrashNet)")
     st.write("**Secondary data:** 2,527 TrashNet photographs by Gary Thung and Mindy Yang, single items on "
-             "a white background. **Primary set:** images the group generated with an AI image model from "
-             "a fixed, recorded prompt plan of campus-like scenes. No primary-set image is a real photograph.")
+             "a white background. **Primary dataset:** 11 real photographs the group took (9 single-item photos "
+             "are scored), plus 2,521 images the group generated with an AI image model from a fixed, recorded "
+             "prompt plan of campus-like scenes.")
+    real = ROOT / "reports/primary_set/real_photos.csv"
+    if real.exists():
+        table = pd.read_csv(real)
+        table["model"] = table.model.map({**MODEL_NAMES, "mobilenet_primary": "MobileNetV2 (TrashNet + primary)"})
+        st.markdown("**The group's real photos:** correct predictions per model")
+        st.dataframe(table[["model", "correct", "photos"]].rename(
+            columns={"model": "Model", "correct": "Correct", "photos": "Photos"}), hide_index=True,
+            use_container_width=True)
     comparison_file = ROOT / "reports/primary_set/dataset_comparison.json"
     if comparison_file.exists():
         summary = read_json(comparison_file)

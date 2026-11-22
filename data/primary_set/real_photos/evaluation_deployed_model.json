@@ -1,0 +1,193 @@
+{
+  "created_utc": "2026-11-22T15:00:48.990737+00:00",
+  "evaluation_type": "separate_labeled_photos",
+  "n": 9,
+  "manifest_sha256": "f0fab2c32f2bf94c339b5aed519ff8db350df6ba6f057bf59d142615e27fecb1",
+  "model_sha256": "1c357178a97d4da967ab60b9c67fc10292ee5319213b112ee7ec0676922734b2",
+  "model": "mobilenet",
+  "classes": [
+    "cardboard",
+    "glass",
+    "metal",
+    "paper",
+    "plastic",
+    "trash"
+  ],
+  "accuracy": 0.3333333333333333,
+  "six_class_macro_f1": null,
+  "macro_f1_present_classes": 0.5619047619047618,
+  "missing_classes": [
+    "cardboard",
+    "glass",
+    "trash"
+  ],
+  "per_class": {
+    "cardboard": {
+      "precision": 0.0,
+      "recall": null,
+      "f1": null,
+      "support": 0
+    },
+    "glass": {
+      "precision": 0.0,
+      "recall": null,
+      "f1": null,
+      "support": 0
+    },
+    "metal": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1
+    },
+    "paper": {
+      "precision": 0.3333333333333333,
+      "recall": 0.5,
+      "f1": 0.4,
+      "support": 2
+    },
+    "plastic": {
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857,
+      "support": 6
+    },
+    "trash": {
+      "precision": 0.0,
+      "recall": null,
+      "f1": null,
+      "support": 0
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      1,
+      0,
+      2,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "notes": [
+    "Results apply only to the supplied labels and photos.",
+    "Six-class macro F1 is withheld if a class has no actual examples.",
+    "Exact pixel checks do not detect all crops, near-duplicates or repeated objects.",
+    "The tool cannot verify campus origin, label quality or collection independence.",
+    "No original benchmark reports or model weights were changed."
+  ],
+  "predictions": [
+    {
+      "item_id": "real_001",
+      "actual": "plastic",
+      "predicted": "paper",
+      "correct": false,
+      "photo_sha256": "58208068848b92ff2773aa907447c9dc25811da94a4ec9dcf493fb6563bae088",
+      "pixel_sha256": "24af3a50a9350fe45d34e9a3c9cf2130684dec6490c03184b4c9419c7fc8e906"
+    },
+    {
+      "item_id": "real_002",
+      "actual": "metal",
+      "predicted": "metal",
+      "correct": true,
+      "photo_sha256": "5f82f5a4e5a08f6147bf59614be0bb4ce41012e22165295303a597e057126bed",
+      "pixel_sha256": "9589813ae7d8df90ecccde315f574f68d74e81618894e3be51a64569da6f2424"
+    },
+    {
+      "item_id": "real_003",
+      "actual": "plastic",
+      "predicted": "cardboard",
+      "correct": false,
+      "photo_sha256": "6ff3334dda2587ed76dd0cbfe6b16550c1e3bf260e320f086d83f5afb884c486",
+      "pixel_sha256": "bb2b7cb3d0d27ac9bb38a28c04c4bca165cd0ac282ca83b49a9f5afd89ff9413"
+    },
+    {
+      "item_id": "real_004",
+      "actual": "paper",
+      "predicted": "cardboard",
+      "correct": false,
+      "photo_sha256": "8d95b5d99548e40c44fc3fead857407b491e20da1a7c56866cbd99b0b686cbf1",
+      "pixel_sha256": "342b46fab574c3921bfc43723324ce9537512b062bcf0617d9fab035bc0f9041"
+    },
+    {
+      "item_id": "real_007",
+      "actual": "paper",
+      "predicted": "paper",
+      "correct": true,
+      "photo_sha256": "d67fbef6d7324f6055109bff07b54c74121521e30f4da606918f9cc4fcc1e3a7",
+      "pixel_sha256": "f4cf401f5c8ac7890f81f0c4890bcf25a00dc94dbf43d357e39aa8e1d26649f3"
+    },
+    {
+      "item_id": "real_008",
+      "actual": "plastic",
+      "predicted": "plastic",
+      "correct": true,
+      "photo_sha256": "b9f8ac316753cc5da10abbfc9db0aa4a8bb852c8422442153003a80fcd302dd6",
+      "pixel_sha256": "a60731d0902ba0ea5f9b8e7df2a9d0349f51218de9240e11f3d4437bd320e059"
+    },
+    {
+      "item_id": "real_009",
+      "actual": "plastic",
+      "predicted": "cardboard",
+      "correct": false,
+      "photo_sha256": "57e8a5034f762fe4aa0ea9c000aaac01f68113c1986368a5a087ac2856c14c79",
+      "pixel_sha256": "50e3a3e6d0a80f7d2c3c9fa98a5cf0a18a8078f83ffdd1c212fe1944ba1e8dcb"
+    },
+    {
+      "item_id": "real_010",
+      "actual": "plastic",
+      "predicted": "glass",
+      "correct": false,
+      "photo_sha256": "c5fbdb91c255480cd241c324b85e19e05e6f092779ee890530dde9e4c2f49654",
+      "pixel_sha256": "dcda7edb811e0fb01e012b17f4052853ea509030e97c970d27a60da7fe13b334"
+    },
+    {
+      "item_id": "real_011",
+      "actual": "plastic",
+      "predicted": "paper",
+      "correct": false,
+      "photo_sha256": "4bb27624a06af484eb37c16e6101bfea66a28b9580c7feb506d5be8f015809d2",
+      "pixel_sha256": "b1ebf0884953bb2d61c7d3dbda829763f3286450d9c245e44f7950364ca8262c"
+    }
+  ]
+}

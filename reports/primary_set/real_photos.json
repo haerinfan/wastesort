@@ -1,0 +1,44 @@
+{
+  "evaluated_utc": "2026-11-22T15:00:34.371941+00:00",
+  "photos_total": 11,
+  "photos_scored": 9,
+  "class_counts": {
+    "plastic": 6,
+    "paper": 2,
+    "metal": 1
+  },
+  "labels_sha256": "f0fab2c32f2bf94c339b5aed519ff8db350df6ba6f057bf59d142615e27fecb1",
+  "note": "Group-taken phone photographs; multi-item scenes are kept but not scored. Too few photos and classes for macro F1; report per-photo outcomes, not general accuracy.",
+  "models": [
+    {
+      "model": "svm",
+      "photos": 9,
+      "correct": 1,
+      "accuracy": 0.1111111111111111
+    },
+    {
+      "model": "random_forest",
+      "photos": 9,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    {
+      "model": "cnn",
+      "photos": 9,
+      "correct": 1,
+      "accuracy": 0.1111111111111111
+    },
+    {
+      "model": "mobilenet",
+      "photos": 9,
+      "correct": 3,
+      "accuracy": 0.3333333333333333
+    },
+    {
+      "model": "cnn_weighted",
+      "photos": 9,
+      "correct": 2,
+      "accuracy": 0.2222222222222222
+    }
+  ]
+}

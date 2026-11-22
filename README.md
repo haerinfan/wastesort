@@ -4,7 +4,7 @@
 
 **Week 14:** [Introduction and Methodology PDF](documents/Goal_Diggers_WasteSort_Introduction_and_Methodology.pdf) · [editable Word manuscript](documents/Goal_Diggers_WasteSort_Introduction_and_Methodology.docx). Covers the November 3–7 submission with 13 required topics and 13 references. See the submission guide for the accompanying datasets, trained models and preliminary evidence. Results and Discussion are the Week 16 manuscript deliverable.
 
-The study compares **secondary TrashNet data** with a **primary set (synthetic)**: 2,521 AI-generated images of waste items in campus-like scenes, with the same class counts as TrashNet, which the instructor approved as primary data. No real photographs or campus data collection are claimed. See the [primary set datasheet](docs/PRIMARY_DATASET.md). The [submission guide](docs/SUBMISSION_GUIDE.md) links the dataset CSVs, source code, actual training evidence, results PDF and brief technical report to each submission requirement.
+The study compares **secondary TrashNet data** with a **primary set (synthetic)**: 2,521 AI-generated images of waste items in campus-like scenes, with the same class counts as TrashNet, which the instructor approved as primary data. The primary dataset also includes 11 real photographs taken by the group, 9 of them single-item photos used as a real-world test. See the [primary dataset datasheet](docs/PRIMARY_DATASET.md). The [submission guide](docs/SUBMISSION_GUIDE.md) links the dataset CSVs, source code, actual training evidence, results PDF and brief technical report to each submission requirement.
 
 Latest: [project status and remaining work](docs/PROJECT_STATUS.md), updated November 7, 2026.
 

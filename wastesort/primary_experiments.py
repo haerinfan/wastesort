@@ -206,14 +206,51 @@ def fine_tune():
     print(pd.DataFrame(rows).to_string(index=False), flush=True)
 
 
+REAL = ROOT / "data/primary_set/real_photos"
+
+
+def real_photos():
+    """Score the group's own photographs (the real part of the primary dataset) with every frozen model."""
+    labels = pd.read_csv(REAL / "labels.csv")
+    frame = labels.assign(path=[(REAL / p).relative_to(ROOT).as_posix() for p in labels.photo])
+    y = frame.label.map(CLASSES.index).to_numpy()
+    names = RESEARCH + (["mobilenet_primary"] if (ROOT / "models/primary_finetuned.json").exists() else [])
+    rows, out = [], frame[["item_id", "label"]].copy()
+    for name in names:
+        kind, model = load_checkpoint(name)
+        pred = np.asarray(predict(kind, model, frame))
+        out[name] = [CLASSES[i] for i in pred]
+        if kind != "classical":
+            from torch.utils.data import DataLoader
+            _, _, scores = predict_network(model, DataLoader(ImageDataset(frame, kind), batch_size=16), "cpu")
+            out[f"{name}_score"] = scores.max(1).round(4)
+        report = metrics(y, pred)
+        rows.append({"model": name, "photos": len(frame), "correct": int((pred == y).sum()),
+                     "accuracy": report["accuracy"]})
+        print(f"{name}: {int((pred == y).sum())}/{len(frame)} real photos correct", flush=True)
+    REPORTS.mkdir(parents=True, exist_ok=True)
+    pd.DataFrame(rows).to_csv(REPORTS / "real_photos.csv", index=False, lineterminator="\n")
+    out.to_csv(REPORTS / "real_photos_predictions.csv", index=False, lineterminator="\n")
+    save_json(REPORTS / "real_photos.json", {
+        "evaluated_utc": datetime.now(timezone.utc).isoformat(),
+        "photos_total": int(len(pd.read_csv(REAL / "photos.csv"))), "photos_scored": int(len(frame)),
+        "class_counts": frame.label.value_counts().to_dict(),
+        "labels_sha256": digest(REAL / "labels.csv"),
+        "note": "Group-taken phone photographs; multi-item scenes are kept but not scored. Too few photos and "
+                "classes for macro F1; report per-photo outcomes, not general accuracy.",
+        "models": rows})
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--stage", choices=["all", "domain_shift", "fine_tune"], default="all")
+    parser.add_argument("--stage", choices=["all", "domain_shift", "fine_tune", "real_photos"], default="all")
     args = parser.parse_args()
     if args.stage in {"all", "domain_shift"}:
         domain_shift()
     if args.stage in {"all", "fine_tune"}:
         fine_tune()
+    if args.stage in {"all", "real_photos"}:
+        real_photos()
 
 
 if __name__ == "__main__":

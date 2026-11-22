@@ -1,8 +1,19 @@
-# Primary set (synthetic): datasheet
+# Primary dataset: datasheet
 
 **Status:** code and protocol ready. The images and results appear after the group runs [the Colab notebook](../notebooks/WasteSort_Primary_Colab.ipynb) and commits its outputs.
 
-## What it is
+## Composition
+
+The primary dataset has two parts. Both counts must be stated wherever the dataset is described.
+
+| Part | Images | Source |
+|---|---:|---|
+| Real photographs | 11 (9 scored) | Taken by the Goal Diggers group on phone cameras, November 2026. See `data/primary_set/real_photos/`. |
+| Generated images ("primary set (synthetic)") | 2,521 | AI-generated with SDXL-Turbo, described below |
+
+The real photographs are a small real-world test set. Nine single-item photos are scored. Two multi-item scenes (photos 5 and 6) are kept for illustration but not scored. In photo 5, bystanders were blurred before the photo was added to the repository. The class coverage is plastic 6, paper 2 and metal 1, so there is no macro F1. Report per-photo outcomes.
+
+## Generated part: what it is
 
 The primary set has 2,521 **AI-generated** images of single waste items. It has exactly the same class counts as the usable TrashNet images: cardboard 403, glass 498, metal 409, paper 594, plastic 480 and trash 137. Equal size and class mix mean differences between the datasets come from the images, not from sample size or class balance. The group did not photograph real objects. The course instructor approved synthetic images as the study's primary dataset. The study compares this set with the secondary dataset, TrashNet.
 

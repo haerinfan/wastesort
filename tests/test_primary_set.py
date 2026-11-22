@@ -119,3 +119,13 @@ def test_image_statistics_flag_white_backgrounds():
 def test_predictor_only_loads_known_metadata():
     with pytest.raises(ValueError):
         Predictor("../secrets.json")
+
+
+def test_real_photo_labels_are_valid_and_files_exist():
+    folder = ROOT / "data/primary_set/real_photos"
+    labels = pd.read_csv(folder / "labels.csv")
+    photos = pd.read_csv(folder / "photos.csv")
+    assert labels.item_id.is_unique and set(labels.label) <= set(CLASSES)
+    assert set(labels.item_id) == set(photos[photos.scored == "yes"].item_id)
+    for photo in photos.photo:
+        assert (folder / photo).exists()
