@@ -35,6 +35,7 @@ KEYWORDS = ("Waste classification; transfer learning; domain shift; real-world e
 # Each section: ("h1"|"h2"|"p"|"bullets"|"table"|"figure"|"pending_figure", payload)
 BODY = [
 ("h1", "INTRODUCTION"),
+("h2", "Background"),
 ("p", "Sorting waste correctly starts with recognising what an item is made of. WasteSort studies whether supervised "
       "image classification can identify the dominant material in a photograph of a single waste item. The goal is an "
       "educational prototype for campus recycling guidance. Material recognition is only a first step: whether an item "
@@ -47,7 +48,10 @@ BODY = [
       "was not feasible in the available time, and with the instructor's approval, we generated 2,517 campus-like "
       "images of the same six materials with an AI image model, matched to TrashNet in size and class mix. The real "
       "photographs test the models on genuine conditions. The generated images allow a large, controlled comparison."),
-("p", "We address four research questions:"),
+("h2", "Objectives"),
+("p", "The general objective is to build and evaluate supervised image classifiers that identify the material of a "
+      "single waste item, and to test whether benchmark performance holds outside the benchmark. The specific "
+      "objectives answer four research questions:"),
 ("bullets", [
     "**RQ1.** How do HOG + SVM, HOG + Random Forest, a small CNN and frozen-backbone MobileNetV2 compare on grouped "
     "TrashNet partitions, and how well does the validation-selected model recognise each class?",
@@ -56,12 +60,16 @@ BODY = [
     "photographs and on the generated images?",
     "**RQ4.** Does adding generated training images change performance on TrashNet, the generated test split "
     "and the real photographs?"]),
-("p", "Our contributions are a reproducible benchmark with documented duplicate handling and validation-only model "
-      "selection, a real-photo test of the benchmark models, a fully recorded procedure for generating and filtering "
-      "campus-like images, and a matched comparison that measures the gap between studio-style photographs and "
-      "everyday scenes."),
-
-("h1", "RELATED WORK"),
+("h2", "Significance"),
+("p", "Misplaced recyclables lower the value of collected material, and sorting guidance on campus is usually a "
+      "static poster. A camera-based helper could give feedback at the bin, but only if it works on the photographs "
+      "students actually take. This study shows how far a benchmark score can be trusted for that purpose and which "
+      "materials fail first. Its contributions are a reproducible benchmark with documented duplicate handling and "
+      "validation-only model selection, a real-photo test of the benchmark models, a fully recorded procedure for "
+      "generating and filtering campus-like images, and a matched comparison that measures the gap between "
+      "studio-style photographs and everyday scenes. All code, data records and results are public so other student "
+      "groups can repeat or extend the work."),
+("h2", "Related Work"),
 ("p", "TrashNet supplies six material labels for predominantly isolated objects [16]. TACO instead annotates litter in "
       "context for detection and segmentation [10]. WasteSort classifies one item per image and does not locate objects."),
 ("p", "For feature-based baselines, HOG describes local edge orientation [3]. Support-vector networks [2] and Random "
@@ -77,7 +85,7 @@ BODY = [
       "trash class counts equally. Leakage between partitions can inflate results [7], so related images are kept in "
       "one partition. Neural scores are not calibrated probabilities [5], so the prototype presents them cautiously."),
 
-("h1", "METHODOLOGY"),
+("h1", "METHODS"),
 ("h2", "Research Design"),
 ("p", "The study is a quantitative, comparative experiment in supervised multiclass image classification. All "
       "candidates use the same records and partitions. Settings were written to protocol files before training "
@@ -161,33 +169,36 @@ BODY = [
 ("p", "Table 2 compares the pipelines on the held-out TrashNet test split. MobileNetV2 had the highest validation macro "
       "F1 (84.74%) and was frozen as the deployment model before testing. It achieved 84.57% test accuracy and 81.22% "
       "macro F1, with a bootstrap interval of 76.25–85.60%. The MobileNetV2-minus-CNN macro-F1 difference interval was "
-      "+17.25 to +30.21 points. The HOG pipelines and the small CNN trailed by 18 to 24 points of macro F1."),
+      "+17.25 to +30.21 points. The HOG pipelines and the small CNN trailed by 18 to 24 points of macro F1. Training was "
+      "stable (Figure 1): loss fell steadily, validation macro F1 peaked at epoch 8, and early stopping ended training "
+      "at epoch 13."),
 ("table", "t2"),
-("p", "Per-class results (Table 3, Figure 1) show the weakness that aggregate scores hide. Cardboard and paper exceeded "
+("figure", "fig0"),
+("p", "Per-class results (Table 3, Figure 2) show the weakness that aggregate scores hide. Cardboard and paper exceeded "
       "89% F1, but trash reached only 58.82% F1, with 10 of 18 trash images recovered. Most errors were between "
       "visually similar materials: glass with metal and plastic, and cardboard with paper. Class-weighted loss raised "
       "small-CNN trash recall from 55.56% to 72.22% (13 of 18), but the interval for the change (−7.69 to +40.00 "
       "points) includes zero."),
 ("table", "t3"),
 ("figure", "fig1"),
-("h2", "The Group's Real Photographs (RQ3)"),
-("p", "The benchmark result did not carry over to real photographs (Table 4). MobileNetV2, 84.57% accurate on TrashNet, "
-      "classified only 3 of the 9 scored photos correctly: the food can, the crumpled paper bag and the plastic food "
-      "tub. Plastic film and bags, the courier pouch, the garbage bag and the air-cushion packaging, were called "
-      "cardboard or paper. The soft-drink bottle was called glass, and the paper shopping bag cardboard. The other "
-      "models did no better: weighted CNN 2/9, small CNN 1/9, SVM 1/9 and Random Forest 0/9. With nine photos and "
-      "three classes, these are case observations, not an accuracy estimate."),
-("table", "t7"),
 ("h2", "Primary versus Secondary Dataset (RQ2)"),
-("p", "The two datasets have the same size and class mix (trash is 5.4% of each) but look very different (Table 5, "
-      "Figure 2). The generated scenes are darker (mean brightness 0.44 vs 0.64), more than twice as saturated "
+("p", "The two datasets have the same size and class mix (trash is 5.4% of each) but look very different (Table 4, "
+      "Figure 3). The generated scenes are darker (mean brightness 0.44 vs 0.64), more than twice as saturated "
       "(0.39 vs 0.18) and busier (edge density 0.21 vs 0.13). Near-white pixels cover 8.5% of a TrashNet image on "
       "average but 1.8% of a generated one. A logistic-regression classifier on ImageNet MobileNetV2 features told "
       "the two datasets apart with 98.97% cross-validated accuracy, where 50% would mean no difference. The primary "
       "data therefore represent a clearly different domain from the benchmark, as intended."),
 ("table", "t4"),
 ("figure", "fig2"),
-("h2", "Domain Shift on Generated Images (RQ3)"),
+("h2", "Domain Shift: The Group's Real Photographs (RQ3)"),
+("p", "The benchmark result did not carry over to real photographs (Table 5). MobileNetV2, 84.57% accurate on TrashNet, "
+      "classified only 3 of the 9 scored photos correctly: the food can, the crumpled paper bag and the plastic food "
+      "tub. Plastic film and bags, the courier pouch, the garbage bag and the air-cushion packaging, were called "
+      "cardboard or paper. The soft-drink bottle was called glass, and the paper shopping bag cardboard. The other "
+      "models did no better: weighted CNN 2/9, small CNN 1/9, SVM 1/9 and Random Forest 0/9. With nine photos and "
+      "three classes, these are case observations, not an accuracy estimate."),
+("table", "t7"),
+("h2", "Domain Shift: Generated Images (RQ3)"),
 ("p", "Every frozen TrashNet model lost accuracy on the generated images (Table 6). The HOG pipelines collapsed to "
       "10–11% macro F1, below chance for six classes, and mostly predicted cardboard. The small CNNs fell to 20–22%. "
       "MobileNetV2 kept the most, 59.73% macro F1 (64.76% accuracy), a drop of 21.5 points. Its recall stayed high "
@@ -200,13 +211,14 @@ BODY = [
       "selected on combined validation macro F1 (84.47%, epoch 12) before any test evaluation. On the generated test "
       "split, macro F1 rose from 58.50% to 87.66% and trash recall from 22.22% to 77.78%. On the TrashNet test split, "
       "macro F1 did not fall: it moved from 81.22% to 82.45%, with trash recall rising from 55.56% to 66.67% (10 to 12 "
-      "of 18). On the real photographs, the fine-tuned model was correct on 5 of 9 instead of 3 (Table 4). It newly "
+      "of 18). On the real photographs, the fine-tuned model was correct on 5 of 9 instead of 3 (Table 5). It newly "
       "recognised the paper shopping bag and the soft-drink bottle and lost none of the earlier correct answers. "
       "Plastic film, bags and packaging were still misread as paper or cardboard. With 9 photos the gain is "
       "suggestive, not statistically reliable."),
 ("table", "t6"),
 
 ("h1", "DISCUSSION"),
+("h2", "Interpretation of Findings"),
 ("p", "On TrashNet, transfer learning outperformed both engineered features and a small network trained from scratch. "
       "This is consistent with pretrained representations being valuable when only about 1,800 training images are "
       "available. The comparison does not isolate architecture, because pretraining adds prior information. The trash "
@@ -226,7 +238,7 @@ BODY = [
       "counts are reported. Second, labels come from prompts, not from inspecting physical objects. The generator may "
       "render implausible items or the wrong material, so the contact sheet must be reviewed by people."),
 
-("h1", "LIMITATIONS AND ETHICS"),
+("h2", "Limitations and Ethics"),
 ("p", "The real photographs are a small convenience sample: 9 scored photos covering three classes, taken by the "
       "authors. They show failure cases but cannot estimate accuracy. The generated images are AI-made and disclosed "
       "as such. Results on them measure transfer to generated scenes, not accuracy on real waste. The study uses one seed, one split and one generator, and diffusion "
@@ -234,14 +246,32 @@ BODY = [
       "is used only for this course study. TrashNet is credited to its creators under the MIT licence. No human "
       "participants were involved. Bystanders visible in one photograph were blurred before publication. A material prediction does not certify recyclability, "
       "cleanliness or safety, and the prototype must not replace posted disposal rules."),
+("h2", "Recommended Improvements"),
+("p", "The findings point to five concrete improvements, in order of expected benefit:"),
+("bullets", [
+    "**Collect real campus photographs.** At least 50 photos per class, taken by different people at real bins, "
+    "split by item so no object appears in two partitions, used first for validation and then as a test set.",
+    "**Cover soft plastic.** Add film, bags, pouches and packaging to the prompt plan, since these failed in every "
+    "test, and have people review the generated contact sheet to remove wrong-material images.",
+    "**Strengthen the trash class.** It is the smallest and most varied class; add examples and apply class "
+    "weighting to MobileNetV2, which helped the small CNN.",
+    "**Adapt more of the network.** Unfreeze the last MobileNetV2 blocks with a low learning rate, and compare a "
+    "larger pretrained backbone under the same protocol.",
+    "**Report uncertainty in the app.** Calibrate scores (for example by temperature scaling [5]) and show "
+    "“not sure” instead of a label when the top score is low. Repeat training over several seeds and "
+    "splits to measure variance."]),
 
-("h1", "CONCLUSION"),
+("h1", "CONCLUSION AND FUTURE WORK"),
 ("p", "Frozen-backbone MobileNetV2 was the strongest of four pipelines on TrashNet (81.22% macro F1), but it recognised "
       "trash poorly and was correct on only 3 of 9 real photographs taken by the group. A matched set of 2,517 generated "
       "campus-like images reproduced this gap (59.73% macro F1), and adding them to training raised generated-test macro "
-      "F1 to 87.66% while keeping TrashNet performance (82.45%) and improving the real-photo count to 5 of 9. A "
-      "validation set of real campus photographs, with verified disposal rules, remains the necessary "
-      "next step."),
+      "F1 to 87.66% while keeping TrashNet performance (82.45%) and improving the real-photo count to 5 of 9. These are "
+      "initial results from one seed and one split, but they meet the study's objectives: the benchmark is "
+      "measured, the gap to everyday scenes is quantified, and one way to narrow it is demonstrated."),
+("p", "Future work will collect a labelled set of real campus photographs, extend generation to soft plastics, "
+      "fine-tune more of the network, and test the prototype with students at campus bins using verified local "
+      "disposal rules. Only a model that performs well on real campus photographs should be offered as sorting "
+      "guidance."),
 
 ("h1", "ACKNOWLEDGMENTS"),
 ("p", "We thank Gary Thung and Mindy Yang for releasing TrashNet. OpenAI ChatGPT/Codex and Anthropic Claude assisted "
@@ -294,7 +324,7 @@ TABLES = {
             ["Metal", "81.25", "82.54", "81.89", "63"], ["Paper", "86.14", "93.55", "89.69", "93"],
             ["Plastic", "85.29", "82.86", "84.06", "70"], ["Trash", "62.50", "55.56", "58.82", "18"],
             ["**Macro avg.**", "**82.05**", "**80.58**", "**81.22**", "**376**"]]),
-    "t4": ("Table 5. Mean image statistics (0–1 scale)",
+    "t4": ("Table 4. Mean image statistics (0–1 scale)",
            ["Measure", "TrashNet", "Primary: generated"],
            [2000, 1400, 1400],
            [["Brightness", "0.640", "0.436"], ["Contrast", "0.180", "0.166"], ["Saturation", "0.178", "0.389"],
@@ -321,7 +351,7 @@ TABLES = {
            "not reported."),
 }
 
-TABLES["t7"] = ("Table 4. MobileNetV2 predictions on the group's real photographs",
+TABLES["t7"] = ("Table 5. MobileNetV2 predictions on the group's real photographs",
            ["Photo", "Item (actual)", "TrashNet only", "+ generated"],
            [550, 1750, 1250, 1250],
            [["R1", "Courier pouch (plastic)", "Paper 0.68", "Paper 0.81"],
@@ -337,7 +367,9 @@ TABLES["t7"] = ("Table 4. MobileNetV2 predictions on the group's real photograph
            "Bold = correct. Number = top softmax output (uncalibrated). “+ generated” = fine-tuned on TrashNet "
            "plus generated images.")
 
-FIGURES = {"fig1": ("mobilenet_confusion.png",
-                    "Figure 1. MobileNetV2 confusion matrix on the TrashNet test split (rows: actual; columns: predicted)."),
+FIGURES = {"fig0": ("mobilenet_learning.png",
+                    "Figure 1. MobileNetV2 training loss and validation macro F1 per epoch on TrashNet."),
+           "fig1": ("mobilenet_confusion.png",
+                    "Figure 2. MobileNetV2 confusion matrix on the TrashNet test split (rows: actual; columns: predicted)."),
            "fig2": ("primary_set/sample_grid.png",
-                    "Figure 2. Random examples per class: TrashNet (left) and generated primary images (right).")}
+                    "Figure 3. Random examples per class: TrashNet (left) and generated primary images (right).")}
