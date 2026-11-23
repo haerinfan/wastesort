@@ -74,7 +74,7 @@ def table(key):
             align = "left" if c == 0 else "center"
             keep = "<w:keepNext/>" if r < len(rows) else ""  # keep each table in one column
             cell_p = para(text, "BodyTextIndent", f'{keep}<w:ind w:firstLine="0"/><w:jc w:val="{align}"/>',
-                          base='<w:sz w:val="16"/><w:szCs w:val="16"/>')
+                          base='<w:sz w:val="18"/><w:szCs w:val="18"/>')
             cells.append(f'<w:tc><w:tcPr><w:tcW w:w="{width}" w:type="dxa"/><w:vAlign w:val="center"/>'
                          f'</w:tcPr>{cell_p}</w:tc>')
         header_flag = "<w:tblHeader/>" if r == 0 else ""
@@ -135,11 +135,17 @@ for i, (name, email) in enumerate(C.AUTHORS):
     lines = "".join(f'<w:r>{"<w:br/>" if k else ""}<w:t xml:space="preserve">{escape(line)}</w:t></w:r>'
                     for k, line in enumerate(C.AFFILIATION))
     parts.append(f'<w:p><w:pPr><w:pStyle w:val="Affiliations"/></w:pPr>{lines}</w:p>')
-    parts.append(para(email, "E-Mail"))
-parts.append(para("", "E-Mail"))
+    if email:  # e-mail lines are optional; omitted when blank
+        parts.append(para(email, "E-Mail"))
+parts.append(para("", "Affiliations"))
 parts.append(f'<w:p><w:pPr><w:jc w:val="center"/>{sect_authors}</w:pPr></w:p>')
 heading = '<w:spacing w:before="120" w:after="0"/>'
 parts.append(para("ABSTRACT", None, '<w:spacing w:after="0"/>', base='<w:b/><w:sz w:val="24"/>'))
+# ACM template 3.3: leave a 3.81 cm (1.5 in) blank box at the bottom of the left column of page 1
+# for the copyright notice. Same frame position as the template's sample box, kept blank.
+parts.append('<w:p><w:pPr><w:framePr w:w="4680" w:h="2160" w:hRule="exact" w:hSpace="187" w:wrap="around" '
+             'w:vAnchor="page" w:hAnchor="page" w:x="1155" w:y="12422" w:anchorLock="1"/>'
+             '<w:spacing w:after="0"/></w:pPr></w:p>')
 parts.append(para(C.ABSTRACT, "Abstract"))
 parts.append(para("CCS Concepts", None, heading, base='<w:b/><w:sz w:val="24"/>'))
 ccs = "   • ".join(f"**{a}**➝**{b}**" for a, b in C.CCS)

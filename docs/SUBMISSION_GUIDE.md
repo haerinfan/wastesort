@@ -2,7 +2,7 @@
 
 ## Week 16 submission: IMRAD paper with initial machine learning results
 
-Submit the [IMRAD paper PDF](../documents/WasteSort_ACM_Paper_Draft.pdf) and its [editable Word version](../documents/WasteSort_ACM_Paper_Draft.docx). It uses the ACM template and follows the five required parts. Fill in the three author e-mail addresses (highlighted in yellow) before submitting.
+Submit the [IMRAD paper PDF](../documents/WasteSort_ACM_Paper_Draft.pdf) and its [editable Word version](../documents/WasteSort_ACM_Paper_Draft.docx). It uses the ACM template and follows the five required parts.
 
 | Required part | Paper section |
 |---|---|

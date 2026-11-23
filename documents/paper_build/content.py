@@ -4,9 +4,9 @@
 TITLE = "WasteSort: Testing Waste-Material Image Classifiers Beyond TrashNet with Real and Generated Primary Data"
 
 AUTHORS = [
-    ("Lordy Allen D. Reyes", "[[e-mail address]]"),
-    ("Josh Patrick R. Reyes", "[[e-mail address]]"),
-    ("John Benjamin S. Tagbo", "[[e-mail address]]"),
+    ("Lordy Allen D. Reyes", ""),
+    ("Josh Patrick R. Reyes", ""),
+    ("John Benjamin S. Tagbo", ""),
 ]
 AFFILIATION = ["De La Salle University–Dasmariñas", "College of Information and Computer Studies",
                "Dasmariñas, Cavite, Philippines"]
@@ -352,7 +352,7 @@ TABLES = {
 }
 
 TABLES["t7"] = ("Table 5. MobileNetV2 predictions on the group's real photographs",
-           ["Photo", "Item (actual)", "TrashNet only", "+ generated"],
+           ["ID", "Item (actual)", "TrashNet only", "+ generated"],
            [550, 1750, 1250, 1250],
            [["R1", "Courier pouch (plastic)", "Paper 0.68", "Paper 0.81"],
             ["R2", "Food can (metal)", "**Metal 0.83**", "**Metal 0.91**"],
