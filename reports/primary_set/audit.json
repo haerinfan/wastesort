@@ -1,0 +1,41 @@
+{
+  "candidates_planned": 4541,
+  "accepted_images": 2517,
+  "class_counts": {
+    "cardboard": 403,
+    "glass": 498,
+    "metal": 409,
+    "paper": 594,
+    "plastic": 476,
+    "trash": 137
+  },
+  "target_counts": {
+    "cardboard": 403,
+    "glass": 498,
+    "metal": 409,
+    "paper": 594,
+    "plastic": 480,
+    "trash": 137
+  },
+  "target_counts_source": "usable TrashNet images per class in data/splits.csv (2,521 total)",
+  "rejected_by_reason": {
+    "clip_top_class_mismatch": 1298,
+    "surplus_above_target_count": 595,
+    "clip_ambiguous": 105,
+    "clip_low_confidence": 25,
+    "near_duplicate_within_primary_set": 1
+  },
+  "split_counts": {
+    "train": 1765,
+    "test": 391,
+    "validation": 361
+  },
+  "group_count": 640,
+  "quality_rule": {
+    "min_label_probability": 0.4,
+    "min_margin": 0.1,
+    "near_duplicate_hamming": 6
+  },
+  "selection_bias_note": "CLIP filtering keeps images CLIP recognises. Accepted images may be easier than all generated images; report the rejection counts with any result.",
+  "manifest_sha256": "9b6d7d4a6d2b561e482f4629aaf428dc85a53afc0b0df55fb40ad34b128312a1"
+}

@@ -183,7 +183,7 @@ with datasets:
     st.subheader("Primary dataset and secondary data (TrashNet)")
     st.write("**Secondary data:** 2,527 TrashNet photographs by Gary Thung and Mindy Yang, single items on "
              "a white background. **Primary dataset:** 11 real photographs the group took (9 single-item photos "
-             "are scored), plus 2,521 images the group generated with an AI image model from a fixed, recorded "
+             "are scored), plus 2,517 images the group generated with an AI image model from a fixed, recorded "
              "prompt plan of campus-like scenes.")
     real = ROOT / "reports/primary_set/real_photos.csv"
     if real.exists():

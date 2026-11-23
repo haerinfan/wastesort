@@ -1,0 +1,42 @@
+{
+  "dataset": "WasteSort primary set (synthetic)",
+  "nature": "AI-generated synthetic images approved by the instructor as the study's primary dataset. No photograph was taken of a real object.",
+  "generator": {
+    "model": "stabilityai/sdxl-turbo",
+    "revision": "71153311d3dbb46851df1931d3ca6e939de83304",
+    "license": "Stability AI Non-Commercial Research Community License (sai-nc-community); non-commercial and research use",
+    "steps": 4,
+    "guidance_scale": 0.0,
+    "generate_size": [
+      512,
+      512
+    ],
+    "saved_size": [
+      512,
+      384
+    ],
+    "crop": "centre crop to 4:3, matching the TrashNet resized archive's 512 x 384 frame",
+    "jpeg_quality": 92,
+    "candidate_multiplier": 1.8
+  },
+  "quality_control_model": "openai/clip-vit-base-patch32",
+  "quality_control_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "protocol_sha256": "3767931912a02dfeac233dde9e12f96c61a983d05c74bf58092c6aa4f87647a0",
+  "candidates_sha256": "243b5d8de657312382574f046bd2ef803686aec2ea693869c4ec69e2a0cad481",
+  "manifest_sha256": "9b6d7d4a6d2b561e482f4629aaf428dc85a53afc0b0df55fb40ad34b128312a1",
+  "generation_environment": {
+    "python": "3.13.17",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "gpu": "NVIDIA GeForce RTX 2080",
+    "packages": {
+      "torch": "2.7.1+cu126",
+      "diffusers": "0.41.0",
+      "transformers": "5.22.2",
+      "accelerate": "1.15.0",
+      "pillow": "11.2.1"
+    },
+    "note": "Diffusion output can differ slightly across GPUs and library builds even with fixed seeds; the saved images and their SHA-256 values are the record."
+  },
+  "prepared_utc": "2026-11-23T05:53:36.526949+00:00",
+  "disclosure": "AI-generated synthetic image; WasteSort primary set (synthetic). Not a photograph of a real object."
+}

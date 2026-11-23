@@ -30,14 +30,21 @@ def crop_to_frame(image, size):
     return image.resize(size, Image.Resampling.LANCZOS)
 
 
-def generate(rows, generator_settings, batch_size):
+def generate(rows, generator_settings, batch_size, low_vram=False):
     import torch
     from diffusers import AutoPipelineForText2Image
     if not torch.cuda.is_available():
         raise SystemExit("A GPU is required. In Colab choose Runtime -> Change runtime type -> GPU.")
     pipe = AutoPipelineForText2Image.from_pretrained(
         generator_settings["model"], revision=generator_settings["revision"],
-        torch_dtype=torch.float16, variant="fp16").to("cuda")
+        torch_dtype=torch.float16, variant="fp16")
+    if low_vram:
+        # 8 GB cards cannot hold all SDXL parts at once: move each part to the GPU only while it runs.
+        # Same weights and seeds; outputs can differ only at floating-point level (see generation_environment.json).
+        pipe.enable_model_cpu_offload()
+        pipe.vae.enable_slicing()
+    else:
+        pipe = pipe.to("cuda")
     pipe.set_progress_bar_config(disable=True)
     todo = [r for r in rows if not (ROOT / r["candidate_path"]).exists()]
     print(f"{len(rows) - len(todo)} candidates already exist; generating {len(todo)}", flush=True)
@@ -93,12 +100,14 @@ def main():
     parser.add_argument("--batch-size", type=int, default=8)
     parser.add_argument("--limit", type=int, default=None,
                         help="Generate only the first N candidates per class (quick trial run).")
+    parser.add_argument("--low-vram", action="store_true",
+                        help="Offload model parts to the CPU between uses (for GPUs with 8 GB or less).")
     args = parser.parse_args()
     protocol = load_protocol()
     rows = build_prompts(protocol)
     if args.limit:
         rows = [r for r in rows if int(r["candidate_id"].rsplit("_", 1)[1]) < args.limit]
-    generate(rows, protocol["generator"], args.batch_size)
+    generate(rows, protocol["generator"], args.batch_size, args.low_vram)
     rows = clip_scores(rows, protocol["quality_control"])
     DATA.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).to_csv(DATA / "candidates.csv", index=False, lineterminator="\n")

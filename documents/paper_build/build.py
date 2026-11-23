@@ -95,13 +95,14 @@ images = []
 def figure(key):
     name, caption = C.FIGURES[key]
     source = repo / "reports" / name
-    target = work / "word/media" / f"paper_{name}"
+    base = Path(name).name  # names may include a reports/ subfolder, e.g. primary_set/sample_grid.png
+    target = work / "word/media" / f"paper_{base}"
     shutil.copyfile(source, target)
     width_px, height_px = Image.open(source).size
     cx = int(3.15 * 914400)
     cy = int(cx * height_px / width_px)
     rid = f"rIdPaper{len(images) + 1}"
-    images.append((rid, f"media/paper_{name}"))
+    images.append((rid, f"media/paper_{base}"))
     n = 100 + len(images)
     drawing = (
         f'<w:r><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="{cx}" cy="{cy}"/>'
@@ -110,7 +111,7 @@ def figure(key):
         '</wp:cNvGraphicFramePr><a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">'
         '<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">'
         '<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">'
-        f'<pic:nvPicPr><pic:cNvPr id="{n}" name="{name}"/><pic:cNvPicPr/></pic:nvPicPr>'
+        f'<pic:nvPicPr><pic:cNvPr id="{n}" name="{base}"/><pic:cNvPicPr/></pic:nvPicPr>'
         f'<pic:blipFill><a:blip r:embed="{rid}"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill>'
         f'<pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="{cx}" cy="{cy}"/></a:xfrm>'
         '<a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic>'

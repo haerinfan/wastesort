@@ -52,6 +52,33 @@ KNN and Decision Tree were evaluated on validation data for introductory learnin
 
 The dataset mostly shows single items against simple backgrounds. No independent campus-photo evaluation has been completed. Unrelated objects, multiple items, contamination and hazardous waste remain outside scope. No model was changed in response to the final test results.
 
-## Primary set (synthetic): pending
+## Primary dataset
 
-Results for the AI-generated primary set appear here after the [primary-set notebook](../notebooks/WasteSort_Primary_Colab.ipynb) runs. Copy the numbers from `reports/primary_set/domain_shift.csv`, `finetune_comparison.csv` and `dataset_comparison.json`. Report them separately from the TrashNet results above, together with the QC rejection counts in `reports/primary_set/audit.json`. The TrashNet numbers above are unchanged.
+Executed November 23, 2026 on one NVIDIA RTX 2080 (`--low-vram`), Python 3.13 with the pinned packages. Reported separately from the TrashNet results above, which are unchanged.
+
+**Generated images.** 4,541 candidates; 1,428 failed the CLIP rule (1,298 wrong top class, 105 ambiguous, 25 low confidence), 1 near-duplicate, 595 surplus. 2,517 kept: every class at its TrashNet target except plastic, 476 of 480 (the protocol accepts at least 95%). Grouped splits: 1,765 training, 361 validation, 391 test (640 groups). Source: `reports/primary_set/audit.json`.
+
+**Dataset comparison** (`dataset_comparison.json`). Mean brightness 0.64 TrashNet vs 0.44 generated; saturation 0.18 vs 0.39; edge density 0.13 vs 0.21; near-white fraction 0.085 vs 0.018. A domain classifier separates the datasets with 98.97% accuracy (50% = indistinguishable).
+
+**Frozen TrashNet models on all generated images** (`domain_shift.csv`, macro F1):
+
+| Model | TrashNet test | Generated | Generated trash recall |
+|---|---:|---:|---:|
+| HOG + SVM | 63.52% | 11.37% | 0.73% |
+| HOG + Random Forest | 60.22% | 10.02% | 0.00% |
+| Small CNN | 57.68% | 22.31% | 4.38% |
+| MobileNetV2 | 81.22% | 59.73% | 20.44% |
+| Small CNN, weighted | 58.84% | 20.04% | 8.03% |
+
+**MobileNetV2 fine-tuned on TrashNet + generated images** (`finetune_comparison.csv`; epoch 12 chosen on combined validation macro F1 0.8447 before testing):
+
+| Trained on | Test set | Accuracy | Macro F1 | Trash recall |
+|---|---|---:|---:|---:|
+| TrashNet | TrashNet test (376) | 84.57% | 81.22% | 55.56% |
+| TrashNet | Generated test (391) | 63.43% | 58.50% | 22.22% |
+| TrashNet + generated | TrashNet test (376) | 84.84% | 82.45% | 66.67% |
+| TrashNet + generated | Generated test (391) | 90.54% | 87.66% | 77.78% |
+
+**Real photographs** (`real_photos.csv`, 9 scored photos, three classes): SVM 1/9, Random Forest 0/9, small CNN 1/9, weighted CNN 2/9, MobileNetV2 3/9, fine-tuned MobileNetV2 5/9. Nine photos show failure cases; they do not estimate accuracy.
+
+Generated-image results measure transfer to AI-generated scenes, not accuracy on real campus waste.

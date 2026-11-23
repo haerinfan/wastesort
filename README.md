@@ -4,7 +4,7 @@
 
 **Week 14:** [Introduction and Methodology PDF](documents/Goal_Diggers_WasteSort_Introduction_and_Methodology.pdf) · [editable Word manuscript](documents/Goal_Diggers_WasteSort_Introduction_and_Methodology.docx). Covers the November 3–7 submission with 13 required topics and 13 references. See the submission guide for the accompanying datasets, trained models and preliminary evidence. Results and Discussion are the Week 16 manuscript deliverable.
 
-The study compares **secondary TrashNet data** with a **primary set (synthetic)**: 2,521 AI-generated images of waste items in campus-like scenes, with the same class counts as TrashNet, which the instructor approved as primary data. The primary dataset also includes 11 real photographs taken by the group, 9 of them single-item photos used as a real-world test. See the [primary dataset datasheet](docs/PRIMARY_DATASET.md). The [submission guide](docs/SUBMISSION_GUIDE.md) links the dataset CSVs, source code, actual training evidence, results PDF and brief technical report to each submission requirement.
+The study compares **secondary TrashNet data** with a **primary set (synthetic)**: 2,517 AI-generated images of waste items in campus-like scenes, matched to TrashNet's class counts (plastic 476 of 480), which the instructor approved as primary data. The primary dataset also includes 11 real photographs taken by the group, 9 of them single-item photos used as a real-world test. See the [primary dataset datasheet](docs/PRIMARY_DATASET.md). The [submission guide](docs/SUBMISSION_GUIDE.md) links the dataset CSVs, source code, actual training evidence, results PDF and brief technical report to each submission requirement.
 
 Latest: [project status and remaining work](docs/PROJECT_STATUS.md), updated November 7, 2026.
 
@@ -121,10 +121,12 @@ The pipeline refuses to retrain over an experiment that already contains final t
 Open [WasteSort_Primary_Colab.ipynb](notebooks/WasteSort_Primary_Colab.ipynb) in Colab with a GPU and select **Run all**. It takes roughly 2–2.5 hours on a T4. It:
 
 1. generates about 4,540 candidate images with SDXL-Turbo from the fixed prompt plan in [protocol_primary.json](protocol_primary.json)
-2. scores each with CLIP, removes mismatches and near-duplicates, selects to TrashNet's class counts (2,521 images) and makes grouped 70/15/15 splits
+2. scores each with CLIP, removes mismatches and near-duplicates, selects to TrashNet's class counts (2,517 images kept; plastic reached 476 of 480) and makes grouped 70/15/15 splits
 3. compares the primary and secondary datasets: class balance, appearance statistics, feature overlap and domain separability
 4. tests the frozen TrashNet models on the primary set (domain shift), and fine-tunes MobileNetV2 on both datasets
 5. downloads a ZIP. Unzip it at the repository root, run the tests and commit.
+
+On a local NVIDIA GPU with 8 GB, run the same steps with `python -m wastesort.generate_primary --batch-size 4 --low-vram`, then `wastesort.primary_set`, `wastesort.dataset_compare` and `wastesort.primary_experiments --stage all` (about 2 hours on an RTX 2080). Results are in [docs/RESULTS.md](docs/RESULTS.md#primary-dataset).
 
 The app's **Datasets** tab shows the comparison. The **Classify** tab offers the fine-tuned model as an optional second model. The published TrashNet results and `models/deployment.json` are unchanged. Results on synthetic images do not measure real campus accuracy.
 

@@ -9,13 +9,13 @@ The primary dataset has two parts. Both counts must be stated wherever the datas
 | Part | Images | Source |
 |---|---:|---|
 | Real photographs | 11 (9 scored) | Taken by the Goal Diggers group on phone cameras, November 2026. See `data/primary_set/real_photos/`. |
-| Generated images ("primary set (synthetic)") | 2,521 | AI-generated with SDXL-Turbo, described below |
+| Generated images ("primary set (synthetic)") | 2,517 | AI-generated with SDXL-Turbo, described below |
 
 The real photographs are a small real-world test set. Nine single-item photos are scored. Two multi-item scenes (photos 5 and 6) are kept for illustration but not scored. In photo 5, bystanders were blurred before the photo was added to the repository. The class coverage is plastic 6, paper 2 and metal 1, so there is no macro F1. Report per-photo outcomes.
 
 ## Generated part: what it is
 
-The primary set has 2,521 **AI-generated** images of single waste items. It has exactly the same class counts as the usable TrashNet images: cardboard 403, glass 498, metal 409, paper 594, plastic 480 and trash 137. Equal size and class mix mean differences between the datasets come from the images, not from sample size or class balance. The group did not photograph real objects. The course instructor approved synthetic images as the study's primary dataset. The study compares this set with the secondary dataset, TrashNet.
+The primary set has 2,517 **AI-generated** images of single waste items. Its class targets are the usable TrashNet counts: cardboard 403, glass 498, metal 409, paper 594, plastic 480 and trash 137. Every class met its target except plastic, which reached 476 of 480 after quality control; the protocol accepts at least 95% of a target, and no settings were changed after generation. Equal size and class mix mean differences between the datasets come from the images, not from sample size or class balance. The group did not photograph real objects. The course instructor approved synthetic images as the study's primary dataset. The study compares this set with the secondary dataset, TrashNet.
 
 Call it **"primary set (synthetic)"** everywhere: in the manuscript, the slides and the app. Every JPEG also contains the disclosure as a file comment.
 

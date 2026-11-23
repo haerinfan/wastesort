@@ -1,0 +1,73 @@
+{
+  "datasets": {
+    "secondary": {
+      "name": "Secondary: TrashNet",
+      "images": 2521,
+      "class_counts": {
+        "cardboard": 403,
+        "glass": 498,
+        "metal": 409,
+        "paper": 594,
+        "plastic": 480,
+        "trash": 137
+      },
+      "imbalance_ratio_max_to_min": 4.335766423357664,
+      "origin": "photographs by the TrashNet creators"
+    },
+    "primary": {
+      "name": "Primary set (synthetic)",
+      "images": 2517,
+      "class_counts": {
+        "cardboard": 403,
+        "glass": 498,
+        "metal": 409,
+        "paper": 594,
+        "plastic": 476,
+        "trash": 137
+      },
+      "imbalance_ratio_max_to_min": 4.335766423357664,
+      "origin": "AI-generated (synthetic) images, see docs/PRIMARY_DATASET.md"
+    }
+  },
+  "appearance_means": {
+    "secondary": {
+      "brightness": 0.6396599009556224,
+      "contrast": 0.18030430113055176,
+      "saturation": 0.17787881856448046,
+      "white_background_fraction": 0.08549958506100835,
+      "colorfulness": 0.09992407429231887,
+      "edge_density": 0.12985480072856753
+    },
+    "primary": {
+      "brightness": 0.4362610742467521,
+      "contrast": 0.1655869991457505,
+      "saturation": 0.3889597012947417,
+      "white_background_fraction": 0.017760502993705303,
+      "colorfulness": 0.14873566098857552,
+      "edge_density": 0.20688002410431977
+    }
+  },
+  "domain_separability": {
+    "balanced_sample_per_dataset": 2517,
+    "cv_accuracy_mean": 0.9896707145409568,
+    "cv_accuracy_folds": [
+      0.9900695134061569,
+      0.9860973187686196,
+      0.9900695134061569,
+      0.9900695134061569,
+      0.9920477137176938
+    ],
+    "interpretation": "Near 50% means the feature distributions overlap; near 100% means a simple classifier can tell synthetic from TrashNet images (a domain gap)."
+  },
+  "feature_centroid_distance": 5.636916160583496,
+  "feature_spread_secondary": 14.335478782653809,
+  "trash_share": {
+    "secondary": 0.054343514478381594,
+    "primary": 0.05442987683750496
+  },
+  "notes": [
+    "Appearance measures use a 256 x 192 copy of each image.",
+    "Features come from ImageNet MobileNetV2 without waste training, so they describe general visual content, not the deployed classifier's view.",
+    "Statistics describe the two collections; they do not show which is more realistic."
+  ]
+}
